@@ -2,15 +2,15 @@
 
 Participants : 
 
-Phillipe Plaïa
-Guillaume Duquesne
-Jordan Godde
-Clément Delhaye
-Alexandre Antolotti
-El mehdi El Aine
-Oussama Abakarrim
-Antoine Lamesch
-Thibault Debbril
+  - Phillipe Plaïa
+  - Guillaume Duquesne
+  - Jordan Godde
+  - Clément Delhaye
+  - Alexandre Antolotti
+  - El mehdi El Aine
+  - Oussama Abakarrim
+  - Antoine Lamesch
+  - Thibault Debbril
 
 
 
