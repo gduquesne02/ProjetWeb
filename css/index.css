@@ -1,0 +1,72 @@
+﻿body {
+  background: url("../img/connectionBackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Inter";
+}
+
+.form {
+  background-color: #fafafa;
+  padding: 25px;
+  width: 30%;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.form h2 {
+  margin-top: 0;
+  color: #a3bb07;
+  font-size: 200%;
+}
+
+.form label {
+  color: #55495a;
+  font-weight: bold;
+}
+
+.form-label {
+  text-align: left;
+  margin-left: 35px;
+  width: 80%;
+}
+
+.form-input {
+  width: 80%;
+  padding: 2%;
+  border: solid 3px #55495a;
+  border-radius: 10px;
+  font-size: 100%;
+}
+
+.form-forgetPassword {
+  color: #a3bb07;
+  font-size: 75%;
+}
+
+.form-forgetPassword:hover {
+  opacity: 0.5;
+}
+
+.form-submit {
+  padding: 15px;
+  width: 30%;
+  color: #fafafa;
+  background-color: #55495a;
+  border-radius: 10px;
+  border: solid 3px #55495a;
+  cursor: pointer;
+  font-size: 100%;
+}
+
+.form-submit:hover {
+  background-color: transparent;
+  border: solid 3px #55495a;
+  color: #55495a;
+  font-size: 100%;
+}
