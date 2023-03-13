@@ -10,7 +10,7 @@ Participants :
   - El mehdi El Aine
   - Oussama Abakarrim
   - Antoine Lamesch
-  - Thibault Debbril
+  - Thibault Debril
 
 
 
