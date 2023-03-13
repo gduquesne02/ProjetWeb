@@ -18,7 +18,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $_SESSION['firstName'] = $data[0]['firstname'];
     $_SESSION['lastName'] = $data[0]['lastname'];
     $_SESSION['iut'] = $data[0]['iut'];
-    echo "Connexion réussie";
+    $_SESSION['status'] = $data[0]['status'];
   }
 }
 

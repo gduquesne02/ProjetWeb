@@ -70,3 +70,18 @@
   color: #55495a;
   font-size: 100%;
 }
+
+.wrongIdentification {
+  background-color: #fafafa;
+  border-radius: 20px;
+  padding: 15px;
+  width: 20%;
+  text-align: center;
+  color: #55495a;
+  font-weight: bold;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
