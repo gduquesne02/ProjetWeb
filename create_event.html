@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Gestion des événements iut informatique</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+        rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!--form css-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/styleformcreateevent.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: TheEvent
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-8">
+                <form id="regForm">
+                    <h1 id="register">Création d'un événement</h1>
+                    <div class="all-steps" id="all-steps">
+                        <span class="step"><i class="fa fa-user"></i></span>
+                        <span class="step"><i class="fa fa-map-marker"></i></span>
+                        <span class="step"><i class="fa fa-shopping-bag"></i></span>
+                        <span class="step"><i class="fa fa-car"></i></span>
+                        <span class="step"><i class="fa fa-spotify"></i></span>
+                        <span class="step"><i class="fa fa-mobile-phone"></i></span>
+                        <span class="step"><i class="fa fa-shopping-bag"></i></span>
+                        <span class="step"><i class="fa fa-car"></i></span>
+                        <span class="step"><i class="fa fa-spotify"></i></span>
+                        <span class="step"><i class="fa fa-mobile-phone"></i></span>
+                        <span class="step"><i class="fa fa-shopping-bag"></i></span>
+                        <span class="step"><i class="fa fa-car"></i></span>
+                        <span class="step"><i class="fa fa-spotify"></i></span>
+                        <span class="step"><i class="fa fa-mobile-phone"></i></span>
+                    </div>
+
+                    <div class="tab">
+                        <h6>Quel est le nom de l'événement ?</h6>
+                        <p>
+                            <input placeholder="Nom événement" oninput="this.className = ''" name="name">
+                        </p>
+
+                    </div>
+                    <div class="tab">
+                        <h6>Description de l'événement ?</h6>
+                        <p><input placeholder="Description événement" oninput="this.className = ''" name="description">
+                        </p>
+
+                    </div>
+                    <div class="tab">
+                        <h6>Date de l'événement</h6>
+                        <p><input placeholder="Date de l'événement" type="date" oninput="this.className = ''"
+                                name="dateEvent"></p>
+
+                    </div>
+                    <div class="tab">
+                        <h6>Date de fin d'inscription à l'événement</h6>
+                        <p><input placeholder="Date fin inscription" type="date" oninput="this.className = ''"
+                                name="registrationEndDate"></p>
+                    </div>
+
+                    <div class="tab">
+                        <h6>Lieu de l'événement</h6>
+                        <p><input placeholder="Lieu" oninput="this.className = ''" name="location"></p>
+                        <h6>Lattitude</h6>
+                        <p><input placeholder="Lattitude" oninput="this.className = ''" name="lattitude"></p>
+                        <h6>Longitude</h6>
+                        <p><input placeholder="Longitude" oninput="this.className = ''" name="longitude"></p>
+                    </div>
+
+                    <div class="tab">
+                        <h6>Atelier</h6>
+                        <p>
+                            <input placeholder="Nom de l'atelier" oninput="this.className = ''" name="workshop">
+                        </p>
+                    </div>
+
+                    <div class="tab">
+                        <h6>Goodies</h6>
+                        <p>
+                            <input placeholder="Nombre de goodies" oninput="this.className = ''" name="goodies">
+                        </p>
+                    </div>
+
+                    <div class="tab">
+                        <h6>Pause café</h6>
+                        <p>
+                            <input placeholder="Pause café" oninput="this.className = ''" name="coffeeBreak">
+                        </p>
+                    </div>
+
+                    <div class="tab">
+                        <h6>Pause déjeuner</h6>
+                        <p>
+                            <input placeholder="Pause déjeuner" oninput="this.className = ''" name="lunchBreak">
+                        </p>
+                    </div>
+
+                    <div class="tab">
+                        <h6>Nombre maximum de membre</h6>
+                        <p>
+                            <input placeholder="Nb max membre" oninput="this.className = ''" name="maxMember">
+                        </p>
+                    </div>
+
+                    <div class="tab">
+                        <h2>Coordonnées de l'hôtel</h2>
+                        <label for="">Lattitude</label>
+                        <p>
+                            <input placeholder="Lattitude" oninput="this.className = ''" name="lattitude">
+                        </p>
+                        <label for="">Longitude</label>
+                        <p>
+                            <input placeholder="Longitude" oninput="this.className = ''" name="longitude">
+                        </p>
+                        <label for="">Prix de l'hôtel</label>
+                        <p>
+                            <input placeholder="Prix de l'hôtel" oninput="this.className = ''" name="price">
+                        </p>
+                        <label for="">Nom de l'hôtel</label>
+                        <p>
+                            <input placeholder="Nom de l'hôtel" oninput="this.className = ''" name="name">
+                        </p>
+                        <label for="">Adresse de l'hôtel</label>
+                        <p>
+                            <input placeholder="Adresse de l'hôtel" oninput="this.className = ''" name="address">
+                        </p>
+                        <label for="">Téléphone hôtel</label>
+                        <p>
+                            <input placeholder="Téléphone hôtel" oninput="this.className = ''" name="telephone">
+                        </p>
+
+                    </div>
+
+                    <!--<div class="tab">
+                        <h6>What's your Favourite Mobile brand?</h6>
+                        <p><input placeholder="Favourite Mobile Brand" oninput="this.className = ''" name="uname"></p>
+                    </div>-->
+                    <div class="thanks-message text-center" id="text-message"> <img
+                            src="https://i.imgur.com/O18mJ1K.png" width="100" class="mb-4">
+                        <h3>L'événement a bien été crée !</h3> <span>La récap est envoyée par mail !</span>
+                    </div>
+
+
+
+                    <div style="overflow:auto;" id="nextprevious">
+                        <div style="float:right;">
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)"><i
+                                    class="fa fa-angle-double-left"></i></button>
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)"><i
+                                    class="fa fa-angle-double-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/form.js"></script>
+</body>
+
+</html>
+
+</footer>
+</body>
