@@ -1,7 +1,7 @@
 <?php
 require("./conf.php");
 
-$req = $bdd->prepare("SELECT * FROM events");
+$req = $bdd->prepare("SELECT * FROM events ORDER BY dateEvent ASC");
 $req->execute();
 $data = $req->fetchAll(PDO::FETCH_ASSOC);
 
@@ -14,7 +14,7 @@ $data = $req->fetchAll(PDO::FETCH_ASSOC);
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <title>Gestion des événements iut informatique</title>
+  <title>Gestion des événements - IUT Informatique</title>
   <meta content="" name="description" />
   <meta content="" name="keywords" />
 
@@ -60,7 +60,7 @@ $data = $req->fetchAll(PDO::FETCH_ASSOC);
             <a class="nav-link scrollto active" href="./accueil.html">Accueil</a>
           </li>
           <li>
-            <a class="nav-link scrollto" href="./liste_evenement.html">Liste des événements</a>
+            <a class="nav-link scrollto" href="./liste_evenement.php">Liste des événements</a>
           </li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
@@ -103,7 +103,7 @@ $data = $req->fetchAll(PDO::FETCH_ASSOC);
           foreach ($data as $event) {
             echo '<div class="col-lg-4 col-md-6">
                     <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-                      <a href="./description_evenement.html"><img src="assets/img/speakers/1.jpg" alt="Speaker 1" class="img-fluid" /></a>
+                      <a href="./description_evenement.html"><img src="assets/img/event.jpg" alt="Speaker 1" class="img-fluid" /></a>
                       <div class="details">
                         <h3>
                           <a href="./description_evenement.html">' . $event['name'] . '</a>
@@ -144,7 +144,7 @@ $data = $req->fetchAll(PDO::FETCH_ASSOC);
                 <i class="bi bi-chevron-right"></i> <a href="./accueil.html">Accueil</a>
               </li>
               <li>
-                <i class="bi bi-chevron-right"></i> <a href="./liste_evenement.html">Événements</a>
+                <i class="bi bi-chevron-right"></i> <a href="./liste_evenement.php">Événements</a>
               </li>
             </ul>
           </div>
