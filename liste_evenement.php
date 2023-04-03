@@ -45,7 +45,6 @@ $data = $req->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-  <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container-fluid container-xxl d-flex align-items-center">
       <div id="logo" class="me-auto">
@@ -84,7 +83,7 @@ $data = $req->fetchAll(PDO::FETCH_ASSOC);
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
-      <a class="buy-tickets scrollto" href="#buy-tickets">Buy Tickets</a>
+      <a class="buy-tickets scrollto" href="#buy-tickets">Creer un événement</a>
     </div>
   </header>
   <!-- End Header -->
