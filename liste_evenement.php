@@ -45,7 +45,6 @@ $data = $req->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-  <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container-fluid container-xxl d-flex align-items-center">
       <div id="logo" class="me-auto">
