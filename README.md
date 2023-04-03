@@ -6,6 +6,7 @@ Participants :
   - Guillaume Duquesne
   - Jordan Godde
   - Clément Delhaye
+  - lupini medi
   - Alexandre Antolotti
   - El mehdi El Aine
   - Oussama Abakarrim
