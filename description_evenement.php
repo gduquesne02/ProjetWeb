@@ -1,17 +1,3 @@
-<?php
-<<<<<<< HEAD
-require('./conf.php');
-
-$req = $bdd->prepare("SELECT * FROM events WHERE id = :id");
-$req->bindParam(':id', $_GET['id']);
-$req->execute();
-$data = $req->fetch();
-=======
-require("./conf.php");
-session_start();
->>>>>>> 7fe4e76e8b139b4b172a0da62e56fb106401e907
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
