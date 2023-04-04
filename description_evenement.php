@@ -1,3 +1,12 @@
+<?php
+require('./conf.php');
+
+$req = $bdd->prepare("SELECT * FROM events WHERE id = :id");
+$req->bindParam(':id', $_GET['id']);
+$req->execute();
+$data = $req->fetch();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,91 +97,21 @@
           <h2>Description et planning de l'événement</h2>
         </div>
 
+        <?php
+        echo '<h1 class="text-center">' . $data['name'] . '</h1>';
+        ?>
+
         <div class="row g-0">
-          <div class="col-lg-6 venue-map">
-            <iframe src="https://www.google.com/maps/embed/v1/streetview?location=50.9509,1.8837&key=AIzaSyBlj0zUtHia8dyKhp1N7CP8OqYA0usfec0" frameborder="0" style="border: 0" allowfullscreen></iframe>
+          <div class="col-sm venue-map">
+            <?php
+            echo '<iframe src="https://maps.google.com/maps?q=' . $data['latitude'] . ',' . $data['longitude'] . '&hl=fr&z=14&amp;output=embed" frameborder="0" style="border: 0" allowfullscreen></iframe>';
+            ?>
           </div>
-
-          <div class="col-lg-6 venue-info">
-            <div class="row justify-content-center">
-              <div class="col-11 col-lg-8 position-relative">
-                <h3>Downtown Conference Center, New York</h3>
-                <p>
-                  Iste nobis eum sapiente sunt enim dolores labore accusantium
-                  autem. Cumque beatae ipsam. Est quae sit qui voluptatem
-                  corporis velit. Qui maxime accusamus possimus. Consequatur
-                  sequi et ea suscipit enim nesciunt quia velit.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid venue-gallery-container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-0">
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="assets/img/venue-gallery/1.jpg" class="glightbox" data-gall="venue-gallery">
-                <img src="assets/img/venue-gallery/1.jpg" alt="" class="img-fluid" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="assets/img/venue-gallery/2.jpg" class="glightbox" data-gall="venue-gallery">
-                <img src="assets/img/venue-gallery/2.jpg" alt="" class="img-fluid" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="assets/img/venue-gallery/3.jpg" class="glightbox" data-gall="venue-gallery">
-                <img src="assets/img/venue-gallery/3.jpg" alt="" class="img-fluid" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="assets/img/venue-gallery/4.jpg" class="glightbox" data-gall="venue-gallery">
-                <img src="assets/img/venue-gallery/4.jpg" alt="" class="img-fluid" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="assets/img/venue-gallery/5.jpg" class="glightbox" data-gall="venue-gallery">
-                <img src="assets/img/venue-gallery/5.jpg" alt="" class="img-fluid" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="assets/img/venue-gallery/6.jpg" class="glightbox" data-gall="venue-gallery">
-                <img src="assets/img/venue-gallery/6.jpg" alt="" class="img-fluid" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="assets/img/venue-gallery/7.jpg" class="glightbox" data-gall="venue-gallery">
-                <img src="assets/img/venue-gallery/7.jpg" alt="" class="img-fluid" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="assets/img/venue-gallery/8.jpg" class="glightbox" data-gall="venue-gallery">
-                <img src="assets/img/venue-gallery/8.jpg" alt="" class="img-fluid" />
-              </a>
-            </div>
+          <div class="col-sm p-5">
+            <?php
+            echo '<p class="h4">' . $data['description'] . '</p><br /><br />';
+            echo '<p class="h4">Adresse : ' . $data['location'] . '</p>';
+            ?>
           </div>
         </div>
       </div>
@@ -183,115 +122,71 @@
     <section id="schedule" class="section-with-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>Event Schedule</h2>
-          <p>Here is our event schedule</p>
+          <h2>Informations</h2>
         </div>
-
-        <h3 class="sub-heading">
-          Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet
-          officia. Eius necessitatibus voluptatem quis labore perspiciatis
-          quia.
-        </h3>
 
         <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
           <!-- Schdule Day 1 -->
           <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
             <div class="row schedule-item">
-              <div class="col-md-2"><time>09:30 AM</time></div>
               <div class="col-md-10">
-                <h4>Registration</h4>
+                <h4>Atelier</h4>
                 <p>
-                  Fugit voluptas iusto maiores temporibus autem numquam
-                  magnam.
+                  <?php
+                  echo '<p>' . $data['workshop'] . '</p>'
+                  ?>
                 </p>
               </div>
             </div>
 
             <div class="row schedule-item">
-              <div class="col-md-2"><time>10:00 AM</time></div>
               <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/speakers/1.jpg" alt="Brenden Legros" />
-                </div>
-                <h4>Keynote <span>Brenden Legros</span></h4>
-                <p>Facere provident incidunt quos voluptas.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>11:00 AM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/speakers/2.jpg" alt="Hubert Hirthe" />
-                </div>
-                <h4>
-                  Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span>
-                </h4>
+                <h4>Goodies</h4>
                 <p>
-                  Maiores dignissimos neque qui cum accusantium ut sit sint
-                  inventore.
+                  <?php
+                  echo '<p>Nombre de goodies disponibles : ' . $data['goodies'] . '</p>';
+                  ?>
                 </p>
               </div>
             </div>
 
             <div class="row schedule-item">
-              <div class="col-md-2"><time>12:00 AM</time></div>
               <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/speakers/3.jpg" alt="Cole Emmerich" />
-                </div>
                 <h4>
-                  Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span>
+                  Pause café
                 </h4>
                 <p>
-                  Veniam accusantium laborum nihil eos eaque accusantium
-                  aspernatur.
+                  <?php
+                  echo '<p>Pause café comprise : ' . $data['coffeeBreak'] . '</p>';
+                  ?>
                 </p>
               </div>
             </div>
 
             <div class="row schedule-item">
-              <div class="col-md-2"><time>02:00 PM</time></div>
               <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/speakers/4.jpg" alt="Jack Christiansen" />
-                </div>
                 <h4>
-                  Qui non qui vel amet culpa sequi.
-                  <span>Jack Christiansen</span>
-                </h4>
-                <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>03:00 PM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/speakers/5.jpg" alt="Alejandrin Littel" />
-                </div>
-                <h4>
-                  Quos ratione neque expedita asperiores.
-                  <span>Alejandrin Littel</span>
+                  Pause déjeuner
                 </h4>
                 <p>
-                  Eligendi quo eveniet est nobis et ad temporibus odio quo.
+                  <?php
+                  echo '<p>Pause déjeuner comprise : ' . $data['lunchBreak'] . '</p>';
+                  ?>
                 </p>
               </div>
             </div>
 
             <div class="row schedule-item">
-              <div class="col-md-2"><time>04:00 PM</time></div>
               <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/speakers/6.jpg" alt="Willow Trantow" />
-                </div>
                 <h4>
-                  Quo qui praesentium nesciunt <span>Willow Trantow</span>
+                  Hôtel
                 </h4>
                 <p>
-                  Voluptatem et alias dolorum est aut sit enim neque
-                  veritatis.
+                  <?php
+                  echo '<p>Hôtel disponible : ' . $data['hotel_name'] . '</p>';
+                  echo '<p>Adresse de l\'hôtel : ' . $data['hotel_address'] . '</p>';
+                  echo '<p>Prix de l\'hôtel : ' . $data['hotel_prix'] . '€</p>';
+                  ?>
                 </p>
               </div>
             </div>
