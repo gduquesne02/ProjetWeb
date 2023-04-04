@@ -5,6 +5,10 @@ $req = $bdd->prepare("SELECT * FROM events ORDER BY dateEvent ASC");
 $req->execute();
 $data = $req->fetchAll(PDO::FETCH_ASSOC);
 
+$req2 = $bdd->prepare("SELECT status FROM users WHERE email LIKE 'test@test.fr'");
+$req2->execute();
+$status = $req2->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +87,11 @@ $data = $req->fetchAll(PDO::FETCH_ASSOC);
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
-      <a class="buy-tickets scrollto" href="#buy-tickets">Creer un événement</a>
+      <?php
+      if ($status != 'USER') {
+        echo '<a class="buy-tickets scrollto" href="#buy-tickets">Creer un événement</a>';
+      }
+      ?>
     </div>
   </header>
   <!-- End Header -->
