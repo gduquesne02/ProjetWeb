@@ -1,10 +1,5 @@
 <?php
 require("./conf.php");
-
-$req = $bdd->prepare("SELECT * FROM events ORDER BY dateEvent ASC");
-$req->execute();
-$data = $req->fetchAll(PDO::FETCH_ASSOC);
-
 session_start();
 ?>
 
@@ -46,6 +41,7 @@ session_start();
 </head>
 
 <body>
+  <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container-fluid container-xxl d-flex align-items-center">
       <div id="logo" class="me-auto">
@@ -87,7 +83,6 @@ session_start();
       <?php
       if ($_SESSION['status'] != 'USER') {
         echo '<a class="buy-tickets scrollto" href="./create_event.html">Creer un événement</a>';
-
         if ($_SESSION['status'] != 'ADMIN') {
           echo '<a class="buy-tickets scrollto" href="./inscription.php">Ajouter un utilisateur</a>';
         }
@@ -97,43 +92,18 @@ session_start();
   </header>
   <!-- End Header -->
 
-  <main id="main">
-    <!-- ======= Speakers Section ======= -->
-    <section id="speakers">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Liste des événements disponibles</h2>
-          <p>Cliquez pour voir les détails</p>
-        </div>
-
-        <div class=" row">
-          <?php
-          foreach ($data as $event) {
-            echo '<div class="col-lg-4 col-md-6">
-                    <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-                      <a href="./description_evenement.php?id=' . $event['id'] . '">
-                        <img src="assets/img/event.jpg" alt="Speaker 1" class="img-fluid" />
-                      </a>
-                      <div class="details">
-                        <h3>
-                          <a href="./description_evenement.php?id=' . $event['id'] . '">' . $event['name'] . '</a>
-                        </h3>
-                        <p>' . $event['description'] . '</p>
-                        <div class="social">
-                          <p>' . $event['dateEvent'] . '</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>';
-          }
-          ?>
-
-        </div>
-      </div>
-    </section>
-    <!-- End Speakers Section -->
-  </main>
-  <!-- End #main -->
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+      <h1 class="mb-4 pb-0">
+        Bienvenue sur <br /><span>l'application web de gestion des événements</span>
+        des iut informatiques
+      </h1>
+      <p class="mb-4 pb-0">Liste des événements de votre département</p>
+      <a href="./liste_evenement.php" class="about-btn scrollto">Événements</a>
+    </div>
+  </section>
+  <!-- End Hero Section -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">

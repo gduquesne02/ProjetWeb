@@ -130,11 +130,11 @@ catch(PDOException $ex){
 		return $lst;
 	}
 
-    public function AddEvent($name,$description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $idHotel)
+    public function AddEvent($name,$description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address)
 	{
 		$bdd = $this->connexion();
-		$reponse = $bdd->prepare("INSERT INTO events(name,description,dateEvent,registrationEndDate,location,latitude,longitude,workshop,goodies,coffeeBreak,lunchBreak,numberMember,maxMember,idHotel) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-		$reponse->execute([$name,$description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $idHotel]);
+		$reponse = $bdd->prepare("INSERT INTO events(name,description,dateEvent,registrationEndDate,location,latitude,longitude,workshop,goodies,coffeeBreak,lunchBreak,numberMember,maxMember, hotel_prix, hotel_name, hotel_address) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+		$reponse->execute([$name,$description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
 	}

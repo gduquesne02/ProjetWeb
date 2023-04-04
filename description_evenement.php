@@ -1,9 +1,10 @@
 <?php
-require("./conf.php");
+require('./conf.php');
 
-$req = $bdd->prepare("SELECT * FROM events ORDER BY dateEvent ASC");
+$req = $bdd->prepare("SELECT * FROM events WHERE id = :id");
+$req->bindParam(':id', $_GET['id']);
 $req->execute();
-$data = $req->fetchAll(PDO::FETCH_ASSOC);
+$data = $req->fetch();
 
 session_start();
 ?>
@@ -46,6 +47,7 @@ session_start();
 </head>
 
 <body>
+  <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container-fluid container-xxl d-flex align-items-center">
       <div id="logo" class="me-auto">
@@ -87,7 +89,6 @@ session_start();
       <?php
       if ($_SESSION['status'] != 'USER') {
         echo '<a class="buy-tickets scrollto" href="./create_event.html">Creer un événement</a>';
-
         if ($_SESSION['status'] != 'ADMIN') {
           echo '<a class="buy-tickets scrollto" href="./inscription.php">Ajouter un utilisateur</a>';
         }
@@ -98,40 +99,112 @@ session_start();
   <!-- End Header -->
 
   <main id="main">
-    <!-- ======= Speakers Section ======= -->
-    <section id="speakers">
-      <div class="container" data-aos="fade-up">
+    <!-- ======= Venue Section ======= -->
+    <section id="venue">
+      <div class="container-fluid" data-aos="fade-up">
         <div class="section-header">
-          <h2>Liste des événements disponibles</h2>
-          <p>Cliquez pour voir les détails</p>
+          <h2>Description et planning de l'événement</h2>
         </div>
 
-        <div class=" row">
-          <?php
-          foreach ($data as $event) {
-            echo '<div class="col-lg-4 col-md-6">
-                    <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-                      <a href="./description_evenement.php?id=' . $event['id'] . '">
-                        <img src="assets/img/event.jpg" alt="Speaker 1" class="img-fluid" />
-                      </a>
-                      <div class="details">
-                        <h3>
-                          <a href="./description_evenement.php?id=' . $event['id'] . '">' . $event['name'] . '</a>
-                        </h3>
-                        <p>' . $event['description'] . '</p>
-                        <div class="social">
-                          <p>' . $event['dateEvent'] . '</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>';
-          }
-          ?>
+        <?php
+        echo '<h1 class="text-center">' . $data['name'] . '</h1>';
+        ?>
 
+        <div class="row g-0">
+          <div class="col-sm venue-map">
+            <?php
+            echo '<iframe src="https://maps.google.com/maps?q=' . $data['latitude'] . ',' . $data['longitude'] . '&hl=fr&z=14&amp;output=embed" frameborder="0" style="border: 0" allowfullscreen></iframe>';
+            ?>
+          </div>
+          <div class="col-sm p-5">
+            <?php
+            echo '<p class="h4">' . $data['description'] . '</p><br /><br />';
+            echo '<p class="h4">Adresse : ' . $data['location'] . '</p>';
+            ?>
+          </div>
         </div>
       </div>
     </section>
-    <!-- End Speakers Section -->
+    <!-- End Venue Section -->
+
+    <!-- ======= Schedule Section ======= -->
+    <section id="schedule" class="section-with-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Informations</h2>
+        </div>
+
+        <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <!-- Schdule Day 1 -->
+          <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+            <div class="row schedule-item">
+              <div class="col-md-10">
+                <h4>Atelier</h4>
+                <p>
+                  <?php
+                  echo '<p>' . $data['workshop'] . '</p>'
+                  ?>
+                </p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-10">
+                <h4>Goodies</h4>
+                <p>
+                  <?php
+                  echo '<p>Nombre de goodies disponibles : ' . $data['goodies'] . '</p>';
+                  ?>
+                </p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-10">
+                <h4>
+                  Pause café
+                </h4>
+                <p>
+                  <?php
+                  echo '<p>Pause café comprise : ' . $data['coffeeBreak'] . '</p>';
+                  ?>
+                </p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-10">
+                <h4>
+                  Pause déjeuner
+                </h4>
+                <p>
+                  <?php
+                  echo '<p>Pause déjeuner comprise : ' . $data['lunchBreak'] . '</p>';
+                  ?>
+                </p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-10">
+                <h4>
+                  Hôtel
+                </h4>
+                <p>
+                  <?php
+                  echo '<p>Hôtel disponible : ' . $data['hotel_name'] . '</p>';
+                  echo '<p>Adresse de l\'hôtel : ' . $data['hotel_address'] . '</p>';
+                  echo '<p>Prix de l\'hôtel : ' . $data['hotel_prix'] . '€</p>';
+                  ?>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Schdule Day 1 -->
+        </div>
+      </div>
+    </section>
+    <!-- End Schedule Section -->
   </main>
   <!-- End #main -->
 
