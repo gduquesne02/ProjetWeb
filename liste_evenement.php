@@ -86,7 +86,7 @@ session_start();
       <!-- .navbar -->
       <?php
       if ($_SESSION['status'] != 'USER') {
-        echo '<a class="buy-tickets scrollto" href="#buy-tickets">Creer un événement</a>';
+        echo '<a class="buy-tickets scrollto" href="./create_event.html">Creer un événement</a>';
       }
       ?>
     </div>
