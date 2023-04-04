@@ -47,6 +47,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     <a href="#" class="form-forgetPassword">Mot de passe oublié ?</a><br /><br />
     <input type="submit" value="Connexion" class="form-submit" />
   </form>
+  <a href="test.php">lien</a>
 </body>
 
 </html>
