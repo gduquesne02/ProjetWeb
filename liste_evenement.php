@@ -5,6 +5,7 @@ $req = $bdd->prepare("SELECT * FROM events ORDER BY dateEvent ASC");
 $req->execute();
 $data = $req->fetchAll(PDO::FETCH_ASSOC);
 
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +84,11 @@ $data = $req->fetchAll(PDO::FETCH_ASSOC);
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
-      <a class="buy-tickets scrollto" href="#buy-tickets">Creer un événement</a>
+      <?php
+      if ($_SESSION['status'] != 'USER') {
+        echo '<a class="buy-tickets scrollto" href="#buy-tickets">Creer un événement</a>';
+      }
+      ?>
     </div>
   </header>
   <!-- End Header -->
@@ -97,15 +102,17 @@ $data = $req->fetchAll(PDO::FETCH_ASSOC);
           <p>Cliquez pour voir les détails</p>
         </div>
 
-        <div class="row">
+        <div class=" row">
           <?php
           foreach ($data as $event) {
             echo '<div class="col-lg-4 col-md-6">
                     <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-                      <a href="./description_evenement.html"><img src="assets/img/event.jpg" alt="Speaker 1" class="img-fluid" /></a>
+                      <a href="./description_evenement.php?id=' . $event['id'] . '">
+                        <img src="assets/img/event.jpg" alt="Speaker 1" class="img-fluid" />
+                      </a>
                       <div class="details">
                         <h3>
-                          <a href="./description_evenement.html">' . $event['name'] . '</a>
+                          <a href="./description_evenement.php?id=' . $event['id'] . '">' . $event['name'] . '</a>
                         </h3>
                         <p>' . $event['description'] . '</p>
                         <div class="social">
