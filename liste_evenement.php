@@ -57,7 +57,7 @@ session_start();
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li>
-            <a class="nav-link scrollto active" href="./accueil.html">Accueil</a>
+            <a class="nav-link scrollto active" href="./accueil.php">Accueil</a>
           </li>
           <li>
             <a class="nav-link scrollto" href="./liste_evenement.php">Liste des événements</a>
@@ -86,7 +86,10 @@ session_start();
       <!-- .navbar -->
       <?php
       if ($_SESSION['status'] != 'USER') {
-        echo '<a class="buy-tickets scrollto" href="#buy-tickets">Creer un événement</a>';
+        echo '<a class="buy-tickets scrollto" href="./create_event.html">Creer un événement</a>';
+        if ($_SESSION['status'] != 'ADMIN') {
+          echo '<a class="buy-tickets scrollto" href="./inscription.php">Ajouter un utilisateur</a>';
+        }
       }
       ?>
     </div>

@@ -47,7 +47,7 @@
     <div class="container mt-5">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-8">
-                <form id="regForm">
+                <form id="regForm" method="post" action="./test.php">
                     <h1 id="register">Création d'un événement</h1>
                     <div class="all-steps" id="all-steps">
                         <span class="step"><i class="fa fa-user"></i></span>
@@ -137,31 +137,18 @@
 
                     <div class="tab">
                         <h2>Coordonnées de l'hôtel</h2>
-                        <label for="">Lattitude</label>
-                        <p>
-                            <input placeholder="Lattitude" oninput="this.className = ''" name="lattitude">
-                        </p>
-                        <label for="">Longitude</label>
-                        <p>
-                            <input placeholder="Longitude" oninput="this.className = ''" name="longitude">
-                        </p>
                         <label for="">Prix de l'hôtel</label>
                         <p>
-                            <input placeholder="Prix de l'hôtel" oninput="this.className = ''" name="price">
+                            <input placeholder="Prix de l'hôtel" oninput="this.className = ''" name="hotel_price">
                         </p>
                         <label for="">Nom de l'hôtel</label>
                         <p>
-                            <input placeholder="Nom de l'hôtel" oninput="this.className = ''" name="name">
+                            <input placeholder="Nom de l'hôtel" oninput="this.className = ''" name="hotel_name">
                         </p>
                         <label for="">Adresse de l'hôtel</label>
                         <p>
-                            <input placeholder="Adresse de l'hôtel" oninput="this.className = ''" name="address">
+                            <input placeholder="Adresse de l'hôtel" oninput="this.className = ''" name="hotel_address">
                         </p>
-                        <label for="">Téléphone hôtel</label>
-                        <p>
-                            <input placeholder="Téléphone hôtel" oninput="this.className = ''" name="telephone">
-                        </p>
-
                     </div>
 
                     <!--<div class="tab">
@@ -170,6 +157,7 @@
                     </div>-->
                     <div class="thanks-message text-center" id="text-message"> <img
                             src="https://i.imgur.com/O18mJ1K.png" width="100" class="mb-4">
+                            <button class="btn btn-primary btn-" type="submit">Submit</button>
                         <h3>L'événement a bien été crée !</h3> <span>La récap est envoyée par mail !</span>
                     </div>
 
@@ -198,9 +186,7 @@
 
         <!-- Template Main JS File -->
         <script src="assets/js/form.js"></script>
+    </footer>
 </body>
 
 </html>
-
-</footer>
-</body>

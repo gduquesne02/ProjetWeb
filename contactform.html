@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Formulaire de contact - IUT Informatique</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Template Main CSS File -->
+    <link href="./css/contactform.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+    <!-- =======================================================
+  * Template Name: TheEvent
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="top-div">
+                <h2>Formulaire de contact</h2>
+                <p>Pour poser vos questions ou demander des infos</p>
+            </div>
+            <div class="stats">
+                <div class="stats1">
+                    <span><i class="fa fa-map-marker"></i></span>
+                    <span>19 Rue Louis David</span>
+                </div>
+                <div class="stats1">
+                    <span><i class="fa fa-phone"></i></span>
+                    <span>03 21 19 06 00</span>
+                </div>
+                <div class="stats1">
+                    <span><i class="fa fa-envelope"></i></span>
+                    <span>marguerite.fernandez@univ-littoral.fr</span>
+                </div>
+            </div>
+            <form method="post" action="traitement.php">
+                <div class="card1">
+                    <div class="left">
+                        <div class="form-control">
+                            <input id="email" type="text" required="required" name="email">
+                            <span>E-mail</span>
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="form-control">
+
+                            <input id="tel" type="text" required="required" name="telephone">
+                            <span>Saisir votre numéro de téléphone</span>
+                            <i class="fa fa-mobile-phone"></i>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="text-area">
+                            <textarea id="zonetext" required="required" name="message"></textarea>
+                            <span>Message</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button">
+                    <button onclick=sendMessage()>Envoyer</button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <footer>
+        <script>
+            function sendMessage() {
+                var email = document.getElementById("email");
+                var tel = document.getElementById("tel");
+                var message = document.getElementById("zonetext");
+
+                email.value = "";
+                tel.value = "";
+                message.value = "";
+                alert("Email bien envoyé !");
+            }
+        </script>
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/form.js"></script>
+    </footer>
+</body>
+
+</html>

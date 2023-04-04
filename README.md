@@ -2,7 +2,7 @@
 
 Participants : 
 
-  - Phillipe Plaïa
+  - Phillipe Plaïa (Responsable Communication)
   - Guillaume Duquesne
   - Jordan Godde
   - Clément Delhaye
@@ -10,7 +10,7 @@ Participants :
   - Alexandre Antolotti
   - El mehdi El Aine
   - Oussama Abakarrim
-  - Antoine Lamesch
+  - Antoine Lamesch (CHEF DE PROJET)
   - Thibault Debril
 
 
