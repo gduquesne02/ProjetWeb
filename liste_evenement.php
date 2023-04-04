@@ -5,10 +5,7 @@ $req = $bdd->prepare("SELECT * FROM events ORDER BY dateEvent ASC");
 $req->execute();
 $data = $req->fetchAll(PDO::FETCH_ASSOC);
 
-$req2 = $bdd->prepare("SELECT status FROM users WHERE email LIKE 'test@test.fr'");
-$req2->execute();
-$status = $req2->fetchAll(PDO::FETCH_ASSOC);
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -88,7 +85,7 @@ $status = $req2->fetchAll(PDO::FETCH_ASSOC);
       </nav>
       <!-- .navbar -->
       <?php
-      if ($status != 'USER') {
+      if ($_SESSION['status'] != 'USER') {
         echo '<a class="buy-tickets scrollto" href="#buy-tickets">Creer un événement</a>';
       }
       ?>
