@@ -75,7 +75,6 @@ function create_facture($user, $ligne_commande, $date, $lieu)
     $result = $result->fetchAll();
     if (true) {
         if (count($result) > 0) {
-            var_dump($result);
             $row = $result;
             $prenom = $row[0]["firstname"];
             $nom = $row[0]["lastname"];

@@ -18,4 +18,3 @@ $lieu = [
     "59800 Lille"
 ];
 $a = create_facture(3, $ligne_commande, "12/12/1999", $lieu);
-echo $a;
