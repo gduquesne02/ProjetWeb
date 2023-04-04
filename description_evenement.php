@@ -48,7 +48,7 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li>
-            <a class="nav-link scrollto active" href="./accueil.html">Accueil</a>
+            <a class="nav-link scrollto active" href="./accueil.php">Accueil</a>
           </li>
           <li>
             <a class="nav-link scrollto" href="./liste_evenement.php">Liste des événements</a>
