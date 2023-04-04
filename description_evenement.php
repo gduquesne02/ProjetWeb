@@ -1,3 +1,8 @@
+<?php
+require("./conf.php");
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,7 +80,14 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
-      <a class="buy-tickets scrollto" href="#buy-tickets">Creer un événement</a>
+      <?php
+      if ($_SESSION['status'] != 'USER') {
+        echo '<a class="buy-tickets scrollto" href="./create_event.html">Creer un événement</a>';
+        if ($_SESSION['status'] != 'ADMIN') {
+          echo '<a class="buy-tickets scrollto" href="./inscription.php">Ajouter un utilisateur</a>';
+        }
+      }
+      ?>
     </div>
   </header>
   <!-- End Header -->
