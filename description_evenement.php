@@ -1,3 +1,14 @@
+<?php
+require('./conf.php');
+
+$req = $bdd->prepare("SELECT * FROM events WHERE id = :id");
+$req->bindParam(':id', $_GET['id']);
+$req->execute();
+$data = $req->fetch();
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
