@@ -25,16 +25,9 @@ Participants :
 - [Thibault Debril](https://github.com/Zoryger) (Développeur)
 
 
-alpage web
+Alpage Web
 
 ---
----
----
----
----
----
-
-
 
 ## 🛠 Technologies utilisé :
 Javascript, HTML, CSS, PHP, MySQL, Bootstrap, Ajax
