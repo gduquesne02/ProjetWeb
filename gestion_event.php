@@ -186,7 +186,7 @@ $dao = new DAO();
                             <form action="controllers/EditEvent.php" method="post" enctype="multipart/form-data"> 
                                 <div class="row">
                                 <div class="col-lg-12">             
-                                  <input type="hidden" name="idUser" value="' . $event[0] . '" >
+                                  <input type="hidden" name="id" value="' . $event[0] . '" >
                                   <input type="text" name="name" placeholder="Nom de l\'événement" value="' . $event[1] . '" required>
                                 </div> 
                                 <div class="col-lg-12">
@@ -208,28 +208,28 @@ $dao = new DAO();
                                   <input type="number" name="longitude" placeholder="Longitude" value="' . $event[7] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[8] . '">
+                                  <input type="text" name="workshop" placeholder="Atelier" value="' . $event[8] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[9] . '">
+                                  <input type="number" name="goodies" placeholder="Goodies" value="' . $event[9] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[10] . '">
+                                  <input type="number" name="coffeeBreak" placeholder="Pause Café" value="' . $event[10] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[11] . '">
+                                  <input type="number" name="lunchBreak" placeholder="Pause Déjeuner" value="' . $event[11] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[13] . '">
+                                  <input type="number" name="maxMember" placeholder="Nb max membre" value="' . $event[13] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[14] . '">
+                                  <input type="text" name="hotel_prix" placeholder="Prix Hôtel" value="' . $event[14] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[15] . '">
+                                  <input type="text" name="hotel_name" placeholder="Nom Hôtel" value="' . $event[15] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[16] . '">
+                                  <input type="text" name="hotel_address" placeholder="Adresse Hôtel" value="' . $event[16] . '">
                                 </div>
                                     <div class="col-lg-12">
                                       <button  class="btn btn-primary btn-lg btn-block" name="submit" type="submit" value="post">Modifier</button>
