@@ -1,4 +1,5 @@
 <?php
+
 use Spipu\Html2Pdf\HTML2PDF;
 
 function test()
@@ -116,7 +117,7 @@ function create_facture($user, $ligne_commande, $date, $lieu)
     $horsTaxe = number_format(floatval($horsTaxe), 2, ',', ' ');
     $loyerTotal = number_format(floatval($loyerTotal), 2, ',', ' ');
 
-    $html2pdf = new HTML2PDF('P', 'A4', 'fr', true, "UTF-8", array(35, 40, 0, 5));
+    $html2pdf = new HTML2PDF('P', 'A4', 'fr', true, "UTF-8", array(25, 40, 0, 5));
     $html = "<style type='text/css'>
 
     table {
@@ -147,9 +148,8 @@ function create_facture($user, $ligne_commande, $date, $lieu)
         border-bottom: none;
     }
 
-    th {
+    th, td, table {
         color: #000;
-
     }
 
     .gauche {
@@ -171,42 +171,34 @@ function create_facture($user, $ligne_commande, $date, $lieu)
     .size {
         font-size: 18px;
     }
+    .exept {
+        color: #000;
+        border: solid;
 </style>
 <page>
 <table>
 <tbody>
     <tr>
         
-        <th colspan='2' class='gauche' style='font-size: 35px'>FACTURE <br><br><br><br></th>
-        <th colspan='3' class='droite'><img src='assets/img/logo.png'>  </th>
+        <th colspan='1' class='gauche' style='font-size: 35px'>DEVIS</th>
+        <th colspan='4' class='droite'><img src='assets/img/logo.png'>  </th>
         <br><br>
     </tr>
     <tr>
-        <th class='gauche'>Date</th>
+        <th class='gauche exept'>Date</th>
         <th class='centre' colspan='2'>Contact</th>
         <th colspan='2' class='droite'>Evenement</th>
     </tr>
     <tr>
         <th class='gauche'>$date <br><br></th>
         <th colspan='2' class='centre'>$mail<br><br></th>
-        <td colspan='2' rowspan='2' class='droite'>" .$lieu[0]. "<br>" .$lieu[1] . " <br></td>
+        <td colspan='2' rowspan='2' class='droite'>" . $lieu[0] . "<br>" . $lieu[1] . " <br></td>
     </tr>
 
     <tr>
         <th colspan='5' class='gauche'>FACTURER À</th>
     </tr>
-    <tr>
-        <th class='gauche'>  </th>
-    </tr>
-    <tr>
-        <td> </td>
-    </tr>
-    <tr>
-        <td> </td>
-    </tr>
-    <tr>
-        <td>   </td>
-    </tr>
+    
     <tr>
         <td>$prenom $nom <br>
         $adresseLigne1 </td>
@@ -253,7 +245,7 @@ function create_facture($user, $ligne_commande, $date, $lieu)
     ";
 
     $html2pdf->writeHTML($html);
-    $html2pdf->output(__DIR__ . '\assets\factures\Facture' . $nom . $prenom .$lieu[0]. '.pdf', 'F');
+    $html2pdf->output(__DIR__ . '\assets\factures\Facture' . $nom . $prenom . $lieu[0] . '.pdf', 'F');
     return __DIR__ . '/assets/factures/FactureUser.pdf';
 }
 
