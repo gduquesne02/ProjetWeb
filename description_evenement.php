@@ -217,7 +217,7 @@ $dao = new DAO();
             <form method="post" action="quit_event.php">
             <input type="hidden" name="id" value=' . $_GET['id'] . '></input>
             <input type="hidden" name="idUser" value=' . $_SESSION["idUser"] . '></input>
-            <button type="submit" class="btn btn-primary" data-aos="fade-up" style="background-color: #55495a; margin-left:auto; margin-right: auto; width:100%;" >Se désinscrire de cet évenement cet événement</button>
+            <button type="submit" class="btn btn-primary" data-aos="fade-up" style="background-color: #55495a; margin-left:auto; margin-right: auto; width:100%;" >Se désinscrire de cet événement</button>
             </form>
             ';
             } else {
