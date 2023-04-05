@@ -126,10 +126,10 @@ $dao = new DAO();
                             <input type="text" name="location" placeholder="Localisation">
                         </div>
                         <div class="col-lg-12">
-                            <input type="float" name="latitude" placeholder="latitude">
+                            <input type="number" name="latitude" placeholder="latitude">
                         </div>
                         <div class="col-lg-12">
-                            <input type="float" name="longitude" placeholder="longitude">
+                            <input type="number" name="longitude" placeholder="longitude">
                         </div>
                         <div class="col-lg-12">
                             <input type="text" name="workshop" placeholder="Atelier">
@@ -138,10 +138,10 @@ $dao = new DAO();
                             <input type="number" name="goodies" placeholder="Goodies">
                         </div>
                         <div class="col-lg-12">
-                            <input type="float" name="coffeeBreak" placeholder="Pause Café">
+                            <input type="number" name="coffeeBreak" placeholder="Pause Café">
                         </div>
                         <div class="col-lg-12">
-                            <input type="float" name="lunchBreak" placeholder="Pause déjeuner">
+                            <input type="number" name="lunchBreak" placeholder="Pause déjeuner">
                         </div>
                         <div class="col-lg-12">
                             <input type="number" name="maxMember" placeholder="Nb max membre">
@@ -202,10 +202,10 @@ $dao = new DAO();
                                   <input type="text" name="location" placeholder="Localisation" value="' . $event[5] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[6] . '">
+                                  <input type="number" name="latitude" placeholder="Latitude" value="' . $event[6] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[7] . '">
+                                  <input type="number" name="longitude" placeholder="Longitude" value="' . $event[7] . '">
                                 </div>
                                 <div class="col-lg-12">
                                   <input type="text" name="iut" placeholder="numéro" value="' . $event[8] . '">
