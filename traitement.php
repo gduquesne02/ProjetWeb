@@ -25,6 +25,7 @@ $message = (new Swift_Message('Nouveau message'))
 if ($mailer->send($message)) {
     echo 'Le message a bien été envoyé';
     $_SESSION['envoie'] = "1";
+    header('Location: contactform.html');
 } else {
     echo 'Une erreur est survenue lors de l\'envoi du message';
 }
