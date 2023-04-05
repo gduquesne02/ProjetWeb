@@ -80,13 +80,19 @@ Le site web a été conçu en utilisant le langage HTML pour la structure de la 
 -Gestion des tâches par un supper admis
 
    -Création d'un compte utilisateur et attribution de rôle  http://localhost/challengeweb/ProjetWeb/GestionUser.php
+   
    -modification et suppression d'un compte utilisateur
+   
    -Création d'un événement, modification et suppression
+   
    -Connexion et déconnexion d'un compte utilisateur ou admis http://localhost/challengeweb/ProjetWeb/index.php
    
 -S'inscrire  à un événement en tant qu'utilisateur http://localhost/projet-web_iut/ProjetWeb/liste_evenement.php
+
 - se désinscrire  à un événement
+ 
 -Génération d'un fichier PDF (facture) pour l'inscription à un événement http://localhost/challengeweb/ProjetWeb/join_event.php
+
 -Contacter l'administrateur via un formulaire de contact par e-mail  http://localhost/projet-web_iut/ProjetWeb/contactform.html
 
 
