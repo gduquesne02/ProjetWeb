@@ -1654,3 +1654,15 @@ nav#navbar ul li a:hover {
 a.nav-link.scrollto.active {
   color: rgba(202, 206, 221, 0.8);
 }
+
+.navbar a, .navbar a:focus {
+  color: grey;
+}
+
+a.nav-link.scrollto.active {
+  color: grey;
+}
+
+.section-header {
+  margin-top: 7%;
+}

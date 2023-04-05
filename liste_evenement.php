@@ -46,6 +46,15 @@ session_start();
 </head>
 
 <body>
+<style>
+  body {
+    background-image: url('./img/iut.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+</style>
+
   <header id="header" class="d-flex align-items-center">
     <div class="container-fluid container-xxl d-flex align-items-center">
       <div id="logo" class="me-auto">
