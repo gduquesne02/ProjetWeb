@@ -256,11 +256,11 @@ catch(PDOException $ex){
 		$reponse->closeCursor();
 		return $lst;
 	}
-	
+
 	public function removeParticipant($iduser, $idEvent)
 	{
 		$bdd = $this->connexion();
-		$reponse = $bdd->prepare("DELETE from participants where idUser=? and idEvent=?");
+		$reponse = $bdd->prepare("SELECT * from participants where idUser=$idUser and idEvent=$idEvent");
 		$reponse->execute([$iduser, $idEvent]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
