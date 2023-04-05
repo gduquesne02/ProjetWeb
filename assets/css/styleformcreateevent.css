@@ -10,12 +10,11 @@ body {
     font-family: Raleway;
     padding: 40px;
     border-radius: 10px;
-    margin-top: 25em;
 }
 
-#register{
+#register {
 
-  color: #55495A;
+    color: #55495A;
 }
 
 h1 {
@@ -34,15 +33,15 @@ input {
 
 
 
-.tab input:focus{
+.tab input:focus {
 
-  border:1px solid #55495A !important;
-  outline: none;
+    border: 1px solid #55495A !important;
+    outline: none;
 }
 
 input.invalid {
- 
-    border:1px solid #e03a0666;
+
+    border: 1px solid #e03a0666;
 }
 
 .tab {
@@ -64,9 +63,9 @@ button:hover {
     opacity: 0.8
 }
 
-button:focus{
+button:focus {
 
-  outline: none !important;
+    outline: none !important;
 }
 
 #prevBtn {
@@ -74,8 +73,8 @@ button:focus{
 }
 
 
-.all-steps{
-      text-align: center;
+.all-steps {
+    text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
     width: 100%;
@@ -84,7 +83,7 @@ button:focus{
 }
 
 .step {
-       height: 40px;
+    height: 40px;
     width: 40px;
     margin: 0 2px;
     background-color: #bbbbbb;
@@ -104,9 +103,9 @@ button:focus{
 
 
 .step.finish {
-   color: #fff;
-   background: #55495A;
-   opacity: 1;
+    color: #fff;
+    background: #55495A;
+    opacity: 1;
 
 }
 
