@@ -27,6 +27,7 @@ $dao = new DAO();
         <div class="buttons_listusers wrapper">
             <div class="btns-grp">
                 <div class="btns-grp" style="margin:10px">
+                    <a href="accueil.php"class="btn btn-main btn-primary">Accueil</a>
                     <a href="#" class="btn btn-main btn-primary" onclick="AddUserBoxOn()" style="margin:auto">Ajouter</a>
                 </div>
 

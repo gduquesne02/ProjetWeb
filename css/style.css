@@ -1,7 +1,8 @@
 /* CSS EL MEHDI */
 
 :root {
-    --blue: #01369B;
+    --violet: #01369B;
+    --violet: #55495a;
     --footerColor: #2522;
     --orange: #E5994A;
     --red: #FF5038;
@@ -20,7 +21,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Inter;
-    background-color: #ffffff;
+    background-image: #ffffff;
 }
 
 img {
@@ -39,7 +40,7 @@ header .header_top {
 }
 
 header .header_top a i {
-    color: var(--blue);
+    color: var(--violet);
 }
 
 header .header_top img {
@@ -81,7 +82,7 @@ header .header_title hr {
 hr {
     width: 99.5%;
     height: 10px;
-    background-color: var(--blue);
+    background-color: var(--violet);
 }
 
 input,
@@ -109,9 +110,9 @@ footer {
 }
 
 .btn-present {
-    background-color: var(--blue);
+    background-color: var(--violet);
     color: var(--white);
-    border: solid 1px var(--blue);
+    border: solid 1px var(--violet);
 }
 
 .btn-absent {
@@ -147,7 +148,7 @@ footer {
     margin: 10px;
     text-decoration: none;
     color: var(--white);
-    background-color: var(--blue);
+    background-color: var(--violet);
     padding: 10px 20px;
     margin: 20px;
     width: fit-content;
@@ -386,7 +387,7 @@ th {
 
 /* CSS Button Menu Admin */
 .button_font a {
-    background-color: var(--blue);
+    background-color: var(--violet);
     text-decoration: none;
 }
 
@@ -594,7 +595,7 @@ th {
 }
 
 .login_inter {
-    background-color: var(--blue);
+    background-color: var(--violet);
     border-radius: 10px;
     border: none;
     color: var(--white);
@@ -623,7 +624,7 @@ form {
 
 button {
     margin: 4px auto auto auto;
-    background-color: var(--blue);
+    background-color: var(--violet);
     color: white;
     width: 235px;
     /* padding: 5px; */
@@ -712,7 +713,7 @@ p {
 .custom-file-upload {
     display: inline-block;
     padding: 8px 16px;
-    background-color: var(--blue);
+    background-color: var(--violet);
     color: #fff;
     border-radius: 10px;
     cursor: pointer;
@@ -848,7 +849,7 @@ header a {
     margin: 0;
     float: left;
     width: 100%;
-    background-color: var(--blue);
+    background-color: var(--violet);
     color: #fff;
     text-align: center;
     font-size: 18px;
@@ -902,7 +903,7 @@ header a {
 }
 
 .post-project-fields form ul li button.active {
-    background-color: var(--blue);
+    background-color: var(--violet);
     color: #fff;
 }
 
@@ -920,7 +921,7 @@ header a {
 
 .post-project-fields form ul li button:hover,
 .post-project-fields form ul li a:hover {
-    background-color: var(--blue);
+    background-color: var(--violet);
     color: #fff;
 }
 
