@@ -351,7 +351,9 @@ label .password-icon .feather-eye-off {
 
 
 
-
+body {
+    background: linear-gradient(180deg, rgba(85,73,90,1) 75%, rgba(163,187,7,1) 100%);
+}
 
 
 
