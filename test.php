@@ -1,4 +1,5 @@
 <?php
+include './DAO.php';
 
 // if (session_status() == PHP_SESSION_NONE) {
 //     session_start();
@@ -26,16 +27,19 @@
 
 
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-include_once "facture.php";
-include_once "DAO.php";
-$id = 100;
-$idEvent = 100;
-$DAO = new DAO;
-$val = $DAO->EventById($id);
+// if (session_status() == PHP_SESSION_NONE) {
+//     session_start();
+// }
+// include_once "facture.php";
+// include_once "DAO.php";
+// $id = 100;
+// $idEvent = 100;
+// $DAO = new DAO;
+// $val = $DAO->EventById($id);
 
 
-$val = $DAO->addUserEvent($id, $idEvent);
-header('Location: accueil.php');
+// $val = $DAO->addUserEvent($id, $idEvent);
+// header('Location: accueil.php');
+$dao = new DAO();
+$list = $dao->listParticipant();
+var_dump($list);

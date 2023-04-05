@@ -47,31 +47,14 @@ catch(PDOException $ex){
 		return $resultstring;
 	}
 
-	public function listParticipant()
-    {
-        $bdd = $this->connexion();
-        $reponse = $bdd->prepare("SELECT * from participants");
-        $reponse->execute([]);
-        $lst = [];
-        while ($ligne = $reponse->fetch()) {
-            $lst[] = [$ligne[0], $ligne[1]];
-        }
-        $reponse->closeCursor();
-        return $lst;
-    }
-
 
 	public function getFirstNameAndLastName($idUser)
 	{
-		$con = mysqli_connect('mysql-alpageweb.alwaysdata.net;dbname=alpageweb_iut', 'alpageweb', 'Z@X4w3SgSmgEhLQ', 'alpageweb_iut');
-		mysqli_select_db($con, "alpageweb_iut");
-		$sql = "select users.firstName, users.lastName from users where id=$idUser";
-		$query = mysqli_query($con, $sql);
-		$result = mysqli_fetch_assoc($query);
-		$resultstring = $result['firstName'];
-		$results = $result['lastName'];
-		mysqli_close($con);
-		return $resultstring . " " . $results;
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("SELECT * from users where id= ?");
+		$reponse->execute([$idUser]);
+		$a = $reponse->fetch();
+		return $a[1] . " " . $a[2];
 	}
 
 

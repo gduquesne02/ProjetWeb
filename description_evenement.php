@@ -8,6 +8,7 @@ $req->execute();
 $data = $req->fetch();
 
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -233,9 +234,14 @@ session_start();
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
     <?php
-    $list = listParticipant();
+    $dao = new DAO();
+    $list = $dao->listParticipant();
     foreach ($list as $key) {
-      echo "<p>$key</p>";
+      if ($key[1]==$_GET['id']) {
+        $val3 = $dao->getFirstNameAndLastName($key[0]);
+        echo "<p>$val3</p>";
+      }
+      
     }
     ?>
   </div>
