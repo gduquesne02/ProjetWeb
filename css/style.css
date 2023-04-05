@@ -147,8 +147,8 @@ footer {
     padding: 5px;
     margin: 10px;
     text-decoration: none;
-    color: var(--white);
-    background-color: var(--violet);
+    color: black;
+    background-color: lightblue;
     padding: 10px 20px;
     margin: 20px;
     width: fit-content;
@@ -358,7 +358,6 @@ body {
 
 
 
-
 /* Tableau liste des événements user */
 table {
     font-family: arial, sans-serif;
@@ -366,6 +365,7 @@ table {
     width: 100%;
     text-align: center;
     margin: auto;
+    color: white;
 }
 
 .btns-grp {
@@ -408,14 +408,23 @@ th {
     background-color: var(--violet);
     text-decoration: none;
 }
+table, th, td {
+    border: 5px solid;
+  }
+
+.center-text{
+    color: white;
+}
+
+i.fa-solid.fa-pen-to-square {
+    color: white;
+}
 
 
+a.btn.btn-primary {
+    background-color: #897692;
 
-
-
-
-
-
+}
 
 
 
@@ -642,7 +651,7 @@ form {
 
 button {
     margin: 4px auto auto auto;
-    background-color: var(--violet);
+    background-color: #897692;
     color: white;
     width: 235px;
     /* padding: 5px; */
@@ -650,6 +659,7 @@ button {
     padding-top: 0.7rem;
     margin-top: 1rem;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .input {
