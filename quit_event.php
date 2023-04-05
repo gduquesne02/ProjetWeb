@@ -10,6 +10,6 @@ include_once "DAO.php";
 $DAO = new DAO;
 $val = $DAO->EventById($_POST['id']);
 
-$val = $DAO->addUserEvent($_POST["idUser"], $_POST['id']);
+$val = $DAO->removeParticipant($_POST["idUser"], $_POST['id']);
 header('Location: accueil.php');
 exit();

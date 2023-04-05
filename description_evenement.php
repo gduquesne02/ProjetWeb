@@ -8,7 +8,7 @@ $req->execute();
 $data = $req->fetch();
 
 session_start();
-
+$dao = new DAO();
 ?>
 
 <!DOCTYPE html>
@@ -212,7 +212,7 @@ session_start();
             <?php
 
             
-            if (true) {
+            if ($dao->removeParticipant($_SESSION['idUser'], $_GET['id'])) {
               echo '
             <form method="post" action="quit_event.php">
             <input type="hidden" name="id" value=' . $_GET['id'] . '></input>
@@ -245,7 +245,7 @@ session_start();
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
     <?php
-    $dao = new DAO();
+    
     $list = $dao->listParticipant();
     foreach ($list as $key) {
       if ($key[1]==$_GET['id']) {

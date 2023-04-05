@@ -258,7 +258,7 @@ catch(PDOException $ex){
 	public function removeParticipant($iduser, $idEvent)
 	{
 		$bdd = $this->connexion();
-		$reponse = $bdd->prepare("SELECT * from participants where idUser=$idUser and idEvent=$idEvent");
+		$reponse = $bdd->prepare("SELECT * from participants where idUser=$iduser and idEvent=$idEvent");
 		$reponse->execute([$iduser, $idEvent]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
