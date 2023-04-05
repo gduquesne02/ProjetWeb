@@ -1,9 +1,16 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
-unset($_SESSION['FirstName']);
-unset($_SESSION['LastName']);
-unset($_SESSION['role']);//Met toutes les variables de session à null et donc oblige une reconnexion 
+
+// Démarrer la session
+session_start();
+
+// Supprimer toutes les données de session
+$_SESSION = array();
+
+// Détruire la session
+session_destroy();
+
 header('Location:./passerelle.php');
 
 ?>
