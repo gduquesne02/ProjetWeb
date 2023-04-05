@@ -183,10 +183,19 @@ catch(PDOException $ex){
 		else return false;
 	}
 
+	public function UpdateEvent($name,$description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address)
+	{
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("UPDATE events set name=?,description=?,dateEvent=?,registrationEndDate=?,location=?,latitude=?,longitude=?,workshop=?,goodies=?,coffeeBreak=?,lunchBreak=?,numberMember=?,maxMember=?, hotel_prix=?, hotel_name=?, hotel_address=? where id=?");
+		$reponse->execute([$name,$description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address]);
+		if ($ligne = $reponse->fetch()) return true;
+		else return false;
+	}
+
     public function deleteEvent($id)
 	{
 		$bdd = $this->connexion();
-		$reponse = $bdd->prepare("DELETE from event where id=?");
+		$reponse = $bdd->prepare("DELETE from events where id=?");
 		$reponse->execute([$id]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;

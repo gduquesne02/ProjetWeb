@@ -30,52 +30,49 @@
   ======================================================== -->
   </head>
 
-  <body>
+<body>
     <div class="container">
-      <div class="card">
-        <div class="top-div">
-          <h2>Formulaire de contact</h2>
-          <p>Pour poser vos questions ou demander des infos</p>
-        </div>
-        <div class="stats">
-          <div class="stats1">
-            <span><i class="fa fa-map-marker"></i></span>
-            <span>19 Rue Louis David</span>
-          </div>
-          <div class="stats1">
-            <span><i class="fa fa-phone"></i></span>
-            <span>03 21 19 06 00</span>
-          </div>
-          <div class="stats1">
-            <span><i class="fa fa-envelope"></i></span>
-            <span>marguerite.fernandez@univ-littoral.fr</span>
-          </div>
-        </div>
-        <form>
-          <div class="card1">
-            <div class="left">
-              <div class="form-control">
-                <input
-                  id="email"
-                  type="text"
-                  required="required"
-                  name="email"
-                />
-                <span>E-mail</span>
-                <i class="fa fa-envelope"></i>
-              </div>
+        <div class="card">
+            <div class="top-div">
+                <h2>Formulaire de contact</h2>
+                <p>Pour poser vos questions ou demander des infos</p>
             </div>
-            <div class="right">
-              <div class="text-area">
-                <textarea
-                  id="zonetext"
-                  required="required"
-                  name="message"
-                ></textarea>
-                <span>Message</span>
-              </div>
+            <div class="stats">
+                <div class="stats1">
+                    <span><i class="fa fa-map-marker"></i></span>
+                    <span>19 Rue Louis David</span>
+                </div>
+                <div class="stats1">
+                    <span><i class="fa fa-phone"></i></span>
+                    <span>03 21 19 06 00</span>
+                </div>
+                <div class="stats1">
+                    <span><i class="fa fa-envelope"></i></span>
+                    <span>marguerite.fernandez@univ-littoral.fr</span>
+                </div>
             </div>
-          </div>
+            <form method="post" action="traitement.php">
+                <div class="card1">
+                    <div class="left">
+                        <div class="form-control">
+                            <input id="email" type="text" required="required" name="email">
+                            <span>E-mail</span>
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="form-control">
+
+                            <input id="tel" type="text" required="required" name="telephone">
+                            <span>Saisir votre numéro</span>
+                            <i class="fa fa-mobile-phone"></i>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="text-area">
+                            <textarea id="zonetext" required="required" name="message"></textarea>
+                            <span>Message</span>
+                        </div>
+                    </div>
+                </div>
 
           <div class="button" onclick="sendMail()">
             <button>Envoyer</button>
