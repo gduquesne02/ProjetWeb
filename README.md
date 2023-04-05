@@ -93,6 +93,8 @@ Le site web a été conçu en utilisant le langage HTML pour la structure de la 
 
 -Vous serez redirigé vers la page d'accueil de l'application. Pour vous connecter, utilisez l'adresse e-mail "test.test@gmail.com" et le mot de passe "test".
 
+-Pour un accès superAdmin vous pouvez utiliser marguerite.fernandez@iut-littoral.fr et comme mdp Marguerite1@
+
 -Il vous sera peut être nécessaire d'installer le dossier vendor, pour cela il vous suffit d'installer composer(https://getcomposer.org/download/) si jamais ce n'est pas fait et d'installer les bibliothèques HTML2PDF et Swiftmailer.
 
 # FONCTIONNALITÉS 
