@@ -8,9 +8,6 @@ include_once "DAO.php";
 $DAO = new DAO;
 $val =$DAO->EventById($_POST['id']);
 
-var_dump($_POST['id']);
-var_dump($val);
-
 $id  = $val[0][0];
 $name = $val[0][1];
 $description = $val[0][2];

@@ -246,6 +246,7 @@ function create_facture($user, $ligne_commande, $date, $lieu)
 
     $html2pdf->writeHTML($html);
     $html2pdf->output(__DIR__ . '\assets\factures\Facture' . $nom . $prenom . $lieu[0] . '.pdf', 'F');
+    $html2pdf->output('facture'.$nom.$lieu[0].'.pdf', 'D');
     return __DIR__ . '/assets/factures/FactureUser.pdf';
 }
 
