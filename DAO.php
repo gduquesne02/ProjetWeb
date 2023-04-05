@@ -127,6 +127,16 @@ catch(PDOException $ex){
 		else return false;
 	}
 
+
+	public function AddUser($nom,$prenom,$email,$iut,$status,$password)
+	{
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("INSERT INTO users(lastName,firstName,email,iut,status,password) values(?,?,?,?,?,?)");
+		$reponse->execute([$nom, $prenom, $email, $iut, $status,$password]);
+		if ($ligne = $reponse->fetch()) return true;
+		else return false;
+	}
+
     public function deleteAllUser()
 	{
 		$bdd = $this->connexion();

@@ -2,15 +2,16 @@
 	$nom=$_POST['nom'];
 	$prenom=$_POST['prenom'];
     $email=$_POST['email']; 
-    $role=$_POST['role'];
-    $numero=$_POST['numero'];
+    $iut=$_POST['iut'];
+    $password=$_POST['mdp'];
+    $status=$_POST['status'];
     session_start();
 	include('../DAO.php');
 	$dao=new DAO();
-	if($dao->AddUser($nom,$prenom,$email,$numero,$role)){
-		header("location:../UsersList.php");
+	if($dao->AddUser($nom,$prenom,$email,$iut,$status,$password)){
+		header("location:../GestionUser.php");
 	}else{
-		header("location:../UsersList.php?erreur=2");
+		header("location:../GestionUser.php?erreur=2");
 		die();
 	}   
 

@@ -75,7 +75,7 @@ $dao = new DAO();
         <div class="post-project">
             <h3>Ajouter Utilisateurs</h3>
             <div class="post-project-fields">
-                <form action="controllers/addUser.php" method="post" enctype="multipart/form-data">
+                <form action="controllers/AddUser.php" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg-12">
                             <input type="text" name="prenom" placeholder="Prénom" required>
@@ -87,11 +87,21 @@ $dao = new DAO();
                             <input type="text" name="email" placeholder="Email">
                         </div>
                         <div class="col-lg-12">
-                            <input type="text" name="numero" placeholder="Numéro">
+                            <input type="password" name="mdp" placeholder="Password">
                         </div>
+
+                        <div class="col-lg-12">
+                            <input type="text" name="iut" placeholder="IUT">
+                        </div>
+
+                        <select name="status">
+                            <option value="S_ADMIN">S_ADMIN</option>
+                            <option value="ADMIN">ADMIN</option>
+                            <option value="USER">USER</option>
+                        </select>
                         <div class="col-lg-12 center">
                             <button class="btn btn-primary btn-lg btn-block" name="submit" type="submit" value="post">Ajouter</button>
-                            <button class="btn btn-secondary btn-lg btn-block" href="#" title="" type="cancel">Cancel</button>
+                            <button class="btn btn-secondary btn-lg btn-block" href="" title="" type="cancel">Cancel</button>
                         </div>
                     </div>
                 </form>
