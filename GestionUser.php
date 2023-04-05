@@ -27,8 +27,9 @@ $dao = new DAO();
         <div class="buttons_listusers wrapper">
             <div class="btns-grp">
                 <div class="btns-grp" style="margin:10px">
-                    <a href="accueil.php"class="btn btn-main btn-primary">Accueil</a>
-                    <a href="#" class="btn btn-main btn-primary" onclick="AddUserBoxOn()" style="margin:auto">Ajouter</a>
+                    <a href="accueil.php" class="btn btn-mainbtn-primary">Accueil</a>
+                    <a href="#" class="btn btn-main btn-primary" onclick="AddUserBoxOn()"
+                        style="margin:auto">Ajouter</a>
                 </div>
 
             </div>
@@ -92,7 +93,19 @@ $dao = new DAO();
                         </div>
 
                         <div class="col-lg-12">
-                            <input type="text" name="iut" placeholder="IUT">
+                        <select class="form-select" name="iut">
+                            <?php
+                            include_once('./DAO.php');
+                            $DAO = new DAO();
+                            $etab = $DAO->getEtab();
+
+                            foreach ($etab as $user => $infUser) {
+                                $etab = $infUser[0];
+                                echo '<option value="' . $etab . '" name= "iut">' . $etab . '</option>';
+
+                            }
+                            ?>
+                        </select>
                         </div>
 
                         <select name="status">
@@ -101,15 +114,20 @@ $dao = new DAO();
                             <option value="USER">USER</option>
                         </select>
                         <div class="col-lg-12 center">
-                            <button class="btn btn-primary btn-lg btn-block" name="submit" type="submit" value="post">Ajouter</button>
-                            <button class="btn btn-secondary btn-lg btn-block" href="" title="" type="cancel">Cancel</button>
+                            <button class="btn btn-primary btn-lg btn-block" name="submit" type="submit"
+                                value="post">Ajouter</button>
+                            <button class="btn btn-secondary btn-lg btn-block" href="" title=""
+                                type="cancel">Cancel</button>
                         </div>
                     </div>
                 </form>
             </div><!--post-project-fields end-->
-            <a href="#" onclick="AddUserBoxOn()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+            <a href="#" onclick="AddUserBoxOn()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                    viewBox="0 0 24 24">
                     <g fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12zm8.207-3.207a1 1 0 0 0-1.414 1.414L10.586 12l-1.793 1.793a1 1 0 1 0 1.414 1.414L12 13.414l1.793 1.793a1 1 0 0 0 1.414-1.414L13.414 12l1.793-1.793a1 1 0 0 0-1.414-1.414L12 10.586l-1.793-1.793z" fill="currentColor" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12zm8.207-3.207a1 1 0 0 0-1.414 1.414L10.586 12l-1.793 1.793a1 1 0 1 0 1.414 1.414L12 13.414l1.793 1.793a1 1 0 0 0 1.414-1.414L13.414 12l1.793-1.793a1 1 0 0 0-1.414-1.414L12 10.586l-1.793-1.793z"
+                            fill="currentColor" />
                     </g>
                 </svg></a>
         </div><!--post-project end-->
