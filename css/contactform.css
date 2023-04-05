@@ -212,7 +212,7 @@ button.backtoaccueil {
     height: 30px;
     width: 200px;
     border: none;
-    background-color: #A3BB07;
+    background-color: #a3bb07d0;
     font-size: 12px;
     border-radius: 5px;
     margin-top: 10px;
@@ -222,7 +222,7 @@ button.backtoaccueil {
 }
 
 button.backtoaccueil:hover {
-    background-color: rgb(164, 236, 164);
+    background-color: #A3BB07;
     transition-duration: 0.5s;
 }
 
