@@ -85,6 +85,15 @@ catch(PDOException $ex){
 	}
 
 
+	public function EditUser($Nom, $prenom, $email, $iut, $idUser)
+	{
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("UPDATE users set firstName=?,lastName=?,email=?,iut=? where id=?");
+		$reponse->execute([$prenom, $Nom, $email, $iut, $idUser]);
+		if ($ligne = $reponse->fetch()) return true;
+		else return false;
+	}
+
 	public function insertUser($email, $password, $firstName, $lastName, $iut, $status){
 
 		$bdd = $this->connexion();
@@ -114,6 +123,16 @@ catch(PDOException $ex){
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("DELETE from users where id=?");
 		$reponse->execute([$id]);
+		if ($ligne = $reponse->fetch()) return true;
+		else return false;
+	}
+
+
+	public function AddUser($nom,$prenom,$email,$iut,$status,$password)
+	{
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("INSERT INTO users(lastName,firstName,email,iut,status,password) values(?,?,?,?,?,?)");
+		$reponse->execute([$nom, $prenom, $email, $iut, $status,$password]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
 	}
