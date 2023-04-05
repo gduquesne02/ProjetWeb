@@ -19,7 +19,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $_SESSION['lastName'] = $data[0]['lastname'];
     $_SESSION['iut'] = $data[0]['iut'];
     $_SESSION['status'] = $data[0]['status'];
-    header("Location: " . $_SERVER['REQUEST_URI'] . "accueil.php");
+    header("Location: accueil.php");
   }
 }
 
