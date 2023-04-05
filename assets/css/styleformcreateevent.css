@@ -1,5 +1,7 @@
 body {
-    background: #eee
+    background-image: url(../img/iut.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #regForm {
@@ -7,12 +9,13 @@ body {
     margin: 0px auto;
     font-family: Raleway;
     padding: 40px;
-    border-radius: 10px
+    border-radius: 10px;
+    margin-top: 25em;
 }
 
 #register{
 
-  color: #6A1B9A;
+  color: #55495A;
 }
 
 h1 {
@@ -33,7 +36,7 @@ input {
 
 .tab input:focus{
 
-  border:1px solid #6a1b9a !important;
+  border:1px solid #55495A !important;
   outline: none;
 }
 
@@ -47,7 +50,7 @@ input.invalid {
 }
 
 button {
-    background-color: #6A1B9A;
+    background-color: #55495A;
     color: #ffffff;
     border: none;
     border-radius: 50%;
@@ -67,7 +70,7 @@ button:focus{
 }
 
 #prevBtn {
-    background-color: #6A1B9A;
+    background-color: #55495A;
 }
 
 
@@ -91,7 +94,7 @@ button:focus{
     justify-content: center;
     align-items: center;
     font-size: 15px;
-    color: #6a1b9a;
+    color: #55495A;
     opacity: 0.5;
 }
 
@@ -102,7 +105,7 @@ button:focus{
 
 .step.finish {
    color: #fff;
-   background: #6a1b9a;
+   background: #55495A;
    opacity: 1;
 
 }
