@@ -208,6 +208,15 @@ catch(PDOException $ex){
 		else return false;
 	}
 
+	public function getNameAndLastName($id)
+	{
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("SELECT firstname,lastname from users where id= ?");
+		$reponse->execute([$id]);
+		if ($ligne = $reponse->fetch()) return true;
+		else return false;
+	}
+
 	public function addParticipant($iduser, $idEvent)
 	{
 		$bdd = $this->connexion();
@@ -228,5 +237,30 @@ catch(PDOException $ex){
 		}
 		$reponse->closeCursor();
 		return $lst;
+	}
+
+	public function listeParticipants($eventId)
+	{
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("SELECT users.id,users.firstName,users.lastName, 
+		users.email,users.phoneNumber from users,events,participants 
+		where users.id = participants.id and events.id=participants.id 
+		and participants.id = ?");
+		$reponse->execute([$eventId]);
+		$lst = [];
+		while ($ligne = $reponse->fetch()) {
+			$lst[] = [$ligne[0], $ligne[1], $ligne[2], $ligne[3], $ligne[4]];
+		}
+		$reponse->closeCursor();
+		return $lst;
+	}
+
+	public function removeParticipant($iduser, $idEvent)
+	{
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("SELECT * from participants where idUser=$idUser and idEvent=$idEvent");
+		$reponse->execute([$iduser, $idEvent]);
+		if ($ligne = $reponse->fetch()) return true;
+		else return false;
 	}
 }
