@@ -183,11 +183,11 @@ $dao = new DAO();
                         <div class="post-project">
                         <h3>Modifier un événement</h3>
                         <div class="post-project-fields">
-                            <form action="controllers/EditUser.php" method="post" enctype="multipart/form-data"> 
+                            <form action="controllers/EditEvent.php" method="post" enctype="multipart/form-data"> 
                                 <div class="row">
                                 <div class="col-lg-12">             
                                   <input type="hidden" name="idUser" value="' . $event[0] . '" >
-                                  <input type="text" name="prenom" placeholder="Prénom" value="' . $event[1] . '" required>
+                                  <input type="text" name="name" placeholder="Nom de l\'événement" value="' . $event[1] . '" required>
                                 </div> 
                                 <div class="col-lg-12">
                                     <input type="text" name="nom" placeholder="Nom" value="' . $event[2] . '" required>
@@ -233,7 +233,7 @@ $dao = new DAO();
                                 </div>
                                     <div class="col-lg-12">
                                       <button  class="btn btn-primary btn-lg btn-block" name="submit" type="submit" value="post">Modifier</button>
-                                      <button class="btn btn-secondary btn-lg btn-block" href="#" title="" type="cancel">Cancel</button>
+                                      <button class="btn btn-secondary btn-lg btn-block" href="gestion_event.php" title="" type="cancel">Annuler la modification</button>
                                       
                                     </div>
                                 </div>

@@ -9,9 +9,9 @@
 	include('../DAO.php');
 	$dao=new DAO();
 	if($dao->EditUser($nom, $prenom, $email, $iut, $idUser)){
-		header("location:../GestionUser.php");
+		header("location:../gestion_event.php");
 	}else{
-		header("location:../GestionUser.php?erreur=2");
+		header("location:../gestion_event.php?erreur=2");
 		die();
 	}
 
