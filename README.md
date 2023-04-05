@@ -75,7 +75,7 @@ Le site web a été conçu en utilisant le langage HTML pour la structure de la 
 
 -Vous serez redirigé vers la page d'accueil de l'application. Pour vous connecter, utilisez l'adresse e-mail "test@test.fr" et le mot de passe "test".
 
-#FONCTIONNALITÉS 
+# FONCTIONNALITÉS 
 
 -Gestion des tâches par un supper admis
 
