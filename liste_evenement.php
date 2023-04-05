@@ -57,10 +57,10 @@ session_start();
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li>
-            <a class="nav-link scrollto active" href="./accueil.php">Accueil</a>
+            <a class="nav-link scrollto" href="./accueil.php">Accueil</a>
           </li>
           <li>
-            <a class="nav-link scrollto" href="./liste_evenement.php">Liste des événements</a>
+            <a class="nav-link scrollto active" href="./liste_evenement.php">Liste des événements</a>
           </li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
