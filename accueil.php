@@ -58,10 +58,6 @@ session_start();
           <li>
             <a class="nav-link scrollto" href="./liste_evenement.php">Liste des événements</a>
           </li>
-
-          <li>
-            <a class="nav-link scrollto" href="GestionUser.php">Gestion de l'utilisateur</a>
-          </li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="#">Drop Down 1</a></li>
@@ -88,7 +84,7 @@ session_start();
       if ($_SESSION['status'] != 'USER') {
         echo '<a class="buy-tickets scrollto" href="./create_event.html">Creer un événement</a>';
         if ($_SESSION['status'] != 'ADMIN') {
-          echo '<a class="buy-tickets scrollto" href="./inscription.php">Ajouter un utilisateur</a>';
+          echo '<a class="buy-tickets scrollto" href="./GestionUser.php">Gestion des utilisateurs</a>';
         }
       }
       ?>

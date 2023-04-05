@@ -191,8 +191,9 @@ table tr:not(:first-child):hover {
 }
 
 .wrapper table {
-    width: auto;
-    min-width: 100%;
+    width: 50%;
+    min-width: 50%;
+
 }
 
 @media screen and (max-width: 414px) {
@@ -362,8 +363,23 @@ table {
     border-collapse: collapse;
     width: 100%;
     text-align: center;
+    margin: auto;
 }
 
+.btns-grp {
+    margin: auto;
+}
+a.btn.btn-mainbtn-primary:hover{
+    background-color: rgb(111, 157, 174);
+}
+
+a.btn.btn-mainbtn-primary {
+    background-color: lightblue;
+}
+
+a.btn.btn-main.btn-primary:hover{
+    background-color: rgb(111, 157, 174);
+}
 td,
 th {
     border: 1px solid #dddddd;
