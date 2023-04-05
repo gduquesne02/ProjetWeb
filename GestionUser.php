@@ -139,7 +139,7 @@ $dao = new DAO();
         echo '
                 <div class="post-popup job_post" id="edit_user' . $user[0] . '">
                         <div class="post-project">
-                        <h3>Modifier un évenement</h3>
+                        <h3>Modifier un utilisateur</h3>
                         <div class="post-project-fields">
                             <form action="controllers/EditUser.php" method="post" enctype="multipart/form-data"> 
                                 <div class="row">
