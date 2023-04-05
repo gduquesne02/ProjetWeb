@@ -19,7 +19,8 @@ session_start();
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+    rel="stylesheet" />
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
@@ -88,12 +89,14 @@ session_start();
         }
       }
       ?>
-      
+
+      <?php if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
+        echo "<div class = 'u_info_isCo' style='margin-left:2em'><div class='ele1'><p style='color:white'>" . $_SESSION['firstName'] . "  " . $_SESSION['lastName'] . "</p></div> <div class='ele2' style='margin-top:-2em'><a href='./deconnexion.php'>Déconnexion</a></div></div>";
+      } ?>
+
     </div>
-    <?php if (isset ($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
-                    echo "<div class = 'u_info_isCo'><div class='ele1'><p style='color:white'>" . $_SESSION['firstName'] . "</p> <p style='color:white'>  " . $_SESSION['lastName'] . "</p></div> <div class='ele2'><a href='./deconnexion.php'>Déconnexion</a></div></div>";
-                  }?>
-              </div>
+
+    </div>
   </header>
   <!-- End Header -->
 
@@ -118,7 +121,8 @@ session_start();
           <div class="col-lg-3 col-md-6 footer-info">
             <img src="assets/img/logo.png" alt="TheEvenet" />
             <p>
-              Cette application a été développée pour les IUTs de France afin de créer, visualiser et gérer les évènements inter-IUTs.
+              Cette application a été développée pour les IUTs de France afin de créer, visualiser et gérer les
+              évènements inter-IUTs.
             </p>
           </div>
 
@@ -138,16 +142,20 @@ session_start();
             <h4>Nous contacter</h4>
             <div class="social-links">
               <a href="https://twitter.com/lesIUT" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
-              <a href="https://fr-fr.facebook.com/lesiut/" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/les_iut/" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/school/iut-institut-universitaire-de-technologie-/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+              <a href="https://fr-fr.facebook.com/lesiut/" class="facebook" target="_blank"><i
+                  class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/les_iut/" class="instagram" target="_blank"><i
+                  class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/school/iut-institut-universitaire-de-technologie-/" class="linkedin"
+                target="_blank"><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
