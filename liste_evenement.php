@@ -101,7 +101,12 @@ session_start();
         }
       }
       ?>
+      
     </div>
+    <?php if (isset ($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
+                    echo "<div class = 'u_info_isCo deconnection'><div class='ele1'><p style='color:white'>" . $_SESSION['firstName'] . "</p> <p style='color:white'>  " . $_SESSION['lastName'] . "</p></div> <div class='ele2'><a href='./deconnexion.php'>Déconnexion</a></div></div>";
+                  }?>
+              </div>
   </header>
   <!-- End Header -->
 
