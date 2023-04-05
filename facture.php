@@ -1,5 +1,6 @@
 <?php
 
+require_once(__DIR__."/vendor/autoload.php");
 use Spipu\Html2Pdf\HTML2PDF;
 
 function test()
