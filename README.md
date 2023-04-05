@@ -116,6 +116,25 @@ Le site web a été conçu en utilisant le langage HTML pour la structure de la 
 -Contacter l'administrateur via un formulaire de contact par e-mail  http://localhost/projet-web_iut/ProjetWeb/contactform.html
 
 
+# TOUS LES LIENS DE NOTE PROJET
+
+
+- Lien du site : https://gestioniut.antoine-lamesch.fr/
+
+- Lien du Git : https://github.com/gduquesne02/ProjetWeb 
+
+- Lien des Notions :
+			 https://www.notion.so/1er-Compte-rendu-Challenge-Web-Mme-Pacou-23-01-23-4c9b9f84402442f4807a582b5ac6778c
+
+			 https://www.notion.so/2er-Compte-rendu-Challenge-Web-Mme-Fernandez-25-01-23-04224f6037ea4ef6ae528545c3d905a1
+			
+
+- Lien du Trello : https://trello.com/invite/b/EIXRaqnY/ATTI832402c1d6208f8c586da9a83ca2dda47BF1DB9C/projet-web
+
+- Lien du Figma : https://www.figma.com/file/R6WovFpPbIZsExrszlu2Sa/Alpage-web?node-id=0%3A1&t=xjkLjOtFEAlSYUmC-1
+
+- Lien vers la vidéos : https://www.youtube.com/watch?v=nKa-_ag3u1Y
+
 
 
    
