@@ -85,6 +85,15 @@ catch(PDOException $ex){
 	}
 
 
+	public function EditUser($Nom, $prenom, $email, $iut, $idUser)
+	{
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("UPDATE users set firstName=?,lastName=?,email=?,iut=? where id=?");
+		$reponse->execute([$prenom, $Nom, $email, $iut, $idUser]);
+		if ($ligne = $reponse->fetch()) return true;
+		else return false;
+	}
+
 	public function insertUser($email, $password, $firstName, $lastName, $iut, $status){
 
 		$bdd = $this->connexion();
