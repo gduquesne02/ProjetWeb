@@ -50,11 +50,15 @@ catch(PDOException $ex){
 
 	public function getFirstNameAndLastName($idUser)
 	{
-		$bdd = $this->connexion();
-		$reponse = $bdd->prepare("SELECT * from users where id= ?");
-		$reponse->execute([$idUser]);
-		$a = $reponse->fetch();
-		return $a[1] . " " . $a[2];
+		$con = mysqli_connect('mysql-alpageweb.alwaysdata.net;dbname=alpageweb_iut', 'alpageweb', 'Z@X4w3SgSmgEhLQ', 'alpageweb_iut');
+		mysqli_select_db($con, "alpageweb_iut");
+		$sql = "select users.firstName, users.lastName from users where id=$idUser";
+		$query = mysqli_query($con, $sql);
+		$result = mysqli_fetch_assoc($query);
+		$resultstring = $result['firstName'];
+		$results = $result['lastName'];
+		mysqli_close($con);
+		return $resultstring . " " . $results;
 	}
 
 
@@ -209,7 +213,7 @@ catch(PDOException $ex){
 	public function getNameAndLastName($id)
 	{
 		$bdd = $this->connexion();
-		$reponse = $bdd->prepare("SELECT * from users where id= ?");
+		$reponse = $bdd->prepare("SELECT firstname,lastname from users where id= ?");
 		$reponse->execute([$id]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
