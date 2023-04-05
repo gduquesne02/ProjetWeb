@@ -149,7 +149,7 @@ catch(PDOException $ex){
 		$reponse->execute([$id]);
 		$lst = [];
 		while ($ligne = $reponse->fetch()) {
-			$lst[] = [$ligne[0], $ligne[1], $ligne[2], $ligne[3], $ligne[4], $ligne[5], $ligne[6], $ligne[7], $ligne[8], $ligne[9], $ligne[10], $ligne[11], $ligne[12], $ligne[13], $ligne[14]];
+			$lst[] = [$ligne[0], $ligne[1], $ligne[2], $ligne[3], $ligne[4], $ligne[5], $ligne[6], $ligne[7], $ligne[8], $ligne[9], $ligne[10], $ligne[11], $ligne[12], $ligne[13], $ligne[14], $ligne[15], $ligne[16] ];
 		}
 		$reponse->closeCursor();
 		return $lst;

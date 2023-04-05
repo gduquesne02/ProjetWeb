@@ -35,7 +35,7 @@
             $DAO = new DAO;
             $list = $DAO->getEtab();
             foreach ($list as $user => $infUser) {
-                $etab = $infUser[5];
+                $etab = $infUser[0];
                 echo '<option value="' . $etab . '" name= "iut">' . $etab . '</option>';
 
             }

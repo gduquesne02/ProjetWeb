@@ -199,6 +199,17 @@ session_start();
                 </p>
               </div>
             </div>
+
+            <br>
+
+            <?php
+            
+            echo'
+            <form method="post" action="join_event.php">
+            <input type="hidden" name="id" value='.$_GET['id'].'></input>
+            <button type="submit" class="btn btn-primary" data-aos="fade-up" style="background-color: #55495a; margin-left:auto; margin-right: auto; width:100%;" >Participer à cet événement</button>
+            ';
+            ?>
           </div>
           <!-- End Schdule Day 1 -->
         </div>

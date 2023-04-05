@@ -189,7 +189,7 @@ function create_facture($user, $ligne_commande, $date, $lieu)
     <tr>
         <th class='gauche'>$date <br><br></th>
         <th colspan='2' class='centre'>$mail<br><br></th>
-        <td colspan='2' rowspan='2' class='droite'>" . $lieu[0] . " <br>" . $lieu[1]  . "<br>" . $adresseLigne1 . "</td>
+        <td colspan='2' rowspan='2' class='droite'>" .$lieu[0]. "<br>" .$lieu[1] . " <br></td>
     </tr>
 
     <tr>
@@ -208,7 +208,8 @@ function create_facture($user, $ligne_commande, $date, $lieu)
         <td>   </td>
     </tr>
     <tr>
-        <td>$prenom $nom  </td>
+        <td>$prenom $nom <br>
+        $adresseLigne1 </td>
     </tr>
     <tr>
         <td><br><br></td>
@@ -252,7 +253,7 @@ function create_facture($user, $ligne_commande, $date, $lieu)
     ";
 
     $html2pdf->writeHTML($html);
-    $html2pdf->output(__DIR__ . '\assets\factures\Facture' . $nom . $prenom . '.pdf', 'F');
+    $html2pdf->output(__DIR__ . '\assets\factures\Facture' . $nom . $prenom .$lieu[0]. '.pdf', 'F');
     return __DIR__ . '/assets/factures/FactureUser.pdf';
 }
 
