@@ -52,8 +52,8 @@ session_start();
     <div class="container-fluid container-xxl d-flex align-items-center">
       <div id="logo" class="me-auto">
         <!-- Uncomment below if you prefer to use a text logo -->
-        <!-- <h1><a href="accueil.html">The<span>Event</span></a></h1>-->
-        <a href="accueil.html" class="scrollto"><img src="assets/img/logo.png" alt="" title="" /></a>
+        <!-- <h1><a href="accueil.php">The<span>Event</span></a></h1>-->
+        <a href="accueil.php" class="scrollto"><img src="assets/img/logo.png" alt="" title="" /></a>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
@@ -224,7 +224,7 @@ session_start();
             <h4>Liens</h4>
             <ul>
               <li>
-                <i class="bi bi-chevron-right"></i> <a href="./accueil.html">Accueil</a>
+                <i class="bi bi-chevron-right"></i> <a href="./accueil.php">Accueil</a>
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i> <a href="./liste_evenement.php">Événements</a>
