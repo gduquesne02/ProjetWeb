@@ -84,6 +84,7 @@ session_start();
       if ($_SESSION['status'] != 'USER') {
         echo '<a class="buy-tickets scrollto" href="./create_event.html">Creer un événement</a>';
         if ($_SESSION['status'] != 'ADMIN') {
+          echo '<a class="buy-tickets scrollto" href="./gestion_event.php">Gestion des événements</a>';
           echo '<a class="buy-tickets scrollto" href="./GestionUser.php">Gestion des utilisateurs</a>';
         }
       }
