@@ -28,7 +28,7 @@ $dao = new DAO();
             <div class="btns-grp">
                 <div class="btns-grp" style="margin:10px">
                     <a href="accueil.php" class="btn btn-mainbtn-primary">Retour Accueil</a>
-                    <a href="#" class="btn btn-main btn-primary" onclick="AddEventBoxOn()"
+                    <a href="create_event.html" class="btn btn-main btn-primary" onclick="AddEventBoxOn()"
                         style="margin:auto">Ajouter un événement</a>
                 </div>
 
@@ -41,6 +41,7 @@ $dao = new DAO();
         <div class="wrapper">
             <table class="table table-bordered thead-dark table-striped">
                 <tr>
+                <th>Modification / Suppression</th>
                     <th>Nom de l'événement</th>
                     <th>Description</th>
                     <th>Date événement</th>
@@ -56,11 +57,20 @@ $dao = new DAO();
                     <th>Prix Hôtel</th>
                     <th>Nom Hôtel</th>
                     <th>Adresse Hôtel</th>
+                    <th>Modification / Suppression</th>
                 </tr>
                 <?php
                 $listEvent = $dao->listEvents();
                 foreach ($listEvent as $event) {
                     echo '<tr>
+                    <td>
+                    <a href="#" class="btn btn-primary" onclick="EditEventBoxOn(' . $event[0] . ')">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-primary" onclick="window.location.href=\'controllers/DeleteEvent.php?id=' . $event[0] . '\'">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
             <td>' . $event[1] . '</td>  
             <td>' . $event[2] . '</td>   
             <td>' . $event[3] . '</td>   
@@ -116,10 +126,10 @@ $dao = new DAO();
                             <input type="text" name="location" placeholder="Localisation">
                         </div>
                         <div class="col-lg-12">
-                            <input type="float" name="latitude" placeholder="latitude">
+                            <input type="number" name="latitude" placeholder="latitude">
                         </div>
                         <div class="col-lg-12">
-                            <input type="float" name="longitude" placeholder="longitude">
+                            <input type="number" name="longitude" placeholder="longitude">
                         </div>
                         <div class="col-lg-12">
                             <input type="text" name="workshop" placeholder="Atelier">
@@ -128,10 +138,10 @@ $dao = new DAO();
                             <input type="number" name="goodies" placeholder="Goodies">
                         </div>
                         <div class="col-lg-12">
-                            <input type="float" name="coffeeBreak" placeholder="Pause Café">
+                            <input type="number" name="coffeeBreak" placeholder="Pause Café">
                         </div>
                         <div class="col-lg-12">
-                            <input type="float" name="lunchBreak" placeholder="Pause déjeuner">
+                            <input type="number" name="lunchBreak" placeholder="Pause déjeuner">
                         </div>
                         <div class="col-lg-12">
                             <input type="number" name="maxMember" placeholder="Nb max membre">
@@ -166,44 +176,77 @@ $dao = new DAO();
     </div><!--post-project-popup end-->
 
     <?php
-    $listUser = $dao->listUsers();
-    foreach ($listUser as $user) {
+    $listEvent = $dao->listEvents();
+    foreach ($listEvent as $event) {
         echo '
-                <div class="post-popup job_post" id="edit_user' . $user[0] . '">
+                <div class="post-popup job_post" id="edit_event' . $event[0] . '">
                         <div class="post-project">
-                        <h3>Modifier un utilisateur</h3>
+                        <h3>Modifier un événement</h3>
                         <div class="post-project-fields">
-                            <form action="controllers/EditUser.php" method="post" enctype="multipart/form-data"> 
+                            <form action="controllers/EditEvent.php" method="post" enctype="multipart/form-data"> 
                                 <div class="row">
                                 <div class="col-lg-12">             
-                                  <input type="hidden" name="idUser" value="' . $user[0] . '" >
-                                  <input type="text" name="prenom" placeholder="Prénom" value="' . $user[1] . '" required>
+                                  <input type="hidden" name="id" value="' . $event[0] . '" >
+                                  <input type="text" name="name" placeholder="Nom de l\'événement" value="' . $event[1] . '" required>
                                 </div> 
                                 <div class="col-lg-12">
-                                    <input type="text" name="nom" placeholder="Nom" value="' . $user[2] . '" required>
+                                    <input type="text" name="description" placeholder="Description" value="' . $event[2] . '" required>
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="email" placeholder="email" value="' . $user[3] . '">
+                                  <input type="date" name="dateEvent" placeholder="Date événement" value="' . $event[3] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $user[5] . '">
+                                  <input type="date" name="registrationEndDate" placeholder="Date fin d\'inscription" value="' . $event[4] . '">
+                                </div>
+                                <div class="col-lg-12">
+                                  <input type="text" name="location" placeholder="Localisation" value="' . $event[5] . '">
+                                </div>
+                                <div class="col-lg-12">
+                                  <input type="number" name="latitude" placeholder="Latitude" value="' . $event[6] . '">
+                                </div>
+                                <div class="col-lg-12">
+                                  <input type="number" name="longitude" placeholder="Longitude" value="' . $event[7] . '">
+                                </div>
+                                <div class="col-lg-12">
+                                  <input type="text" name="workshop" placeholder="Atelier" value="' . $event[8] . '">
+                                </div>
+                                <div class="col-lg-12">
+                                  <input type="number" name="goodies" placeholder="Goodies" value="' . $event[9] . '">
+                                </div>
+                                <div class="col-lg-12">
+                                  <input type="number" name="coffeeBreak" placeholder="Pause Café" value="' . $event[10] . '">
+                                </div>
+                                <div class="col-lg-12">
+                                  <input type="number" name="lunchBreak" placeholder="Pause Déjeuner" value="' . $event[11] . '">
+                                </div>
+                                <div class="col-lg-12">
+                                  <input type="number" name="maxMember" placeholder="Nb max membre" value="' . $event[13] . '">
+                                </div>
+                                <div class="col-lg-12">
+                                  <input type="text" name="hotel_prix" placeholder="Prix Hôtel" value="' . $event[14] . '">
+                                </div>
+                                <div class="col-lg-12">
+                                  <input type="text" name="hotel_name" placeholder="Nom Hôtel" value="' . $event[15] . '">
+                                </div>
+                                <div class="col-lg-12">
+                                  <input type="text" name="hotel_address" placeholder="Adresse Hôtel" value="' . $event[16] . '">
                                 </div>
                                     <div class="col-lg-12">
                                       <button  class="btn btn-primary btn-lg btn-block" name="submit" type="submit" value="post">Modifier</button>
-                                      <button class="btn btn-secondary btn-lg btn-block" href="#" title="" type="cancel">Cancel</button>
+                                      <button class="btn btn-secondary btn-lg btn-block" href="gestion_event.php" title="" type="cancel">Annuler la modification</button>
                                       
                                     </div>
                                 </div>
                             </form>
                         </div><!--post-project-fields end-->
-                        <a href="#" onclick="EditEventBoxOn(' . $user[0] . ')"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12zm8.207-3.207a1 1 0 0 0-1.414 1.414L10.586 12l-1.793 1.793a1 1 0 1 0 1.414 1.414L12 13.414l1.793 1.793a1 1 0 0 0 1.414-1.414L13.414 12l1.793-1.793a1 1 0 0 0-1.414-1.414L12 10.586l-1.793-1.793z" fill="currentColor"/></g></svg></a>
+                        <a href="#" onclick="EditEventBoxOn(' . $event[0] . ')"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12zm8.207-3.207a1 1 0 0 0-1.414 1.414L10.586 12l-1.793 1.793a1 1 0 1 0 1.414 1.414L12 13.414l1.793 1.793a1 1 0 0 0 1.414-1.414L13.414 12l1.793-1.793a1 1 0 0 0-1.414-1.414L12 10.586l-1.793-1.793z" fill="currentColor"/></g></svg></a>
                     </div><!--post-project end-->
                 </div><!--post-project-popup end-->';
     } ?>
 
     <script>
-        function EditEventBoxOn(userId) {
-            var popup = document.getElementById("edit_event" + userId);
+        function EditEventBoxOn(eventId) {
+            var popup = document.getElementById("edit_event" + eventId);
             var main = document.getElementById("main");
             var footer = document.getElementById("footer");
             popup.classList.toggle("active");

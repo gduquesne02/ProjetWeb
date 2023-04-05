@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
 }
 
 .card {
@@ -187,16 +187,44 @@
     font-size: 12px;
     border-radius: 10px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 
 
+input#email {
+    background-color: #e5e5e5;
+
+}
 
 
+input#tel {
+    background-color: #e5e5e5;
+    padding: 2%;
+}
 
 
+textarea#zonetext {
+    background-color: #e5e5e5;
+}
 
+button.backtoaccueil {
+    height: 30px;
+    width: 200px;
+    border: none;
+    background-color: #a3bb07d0;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10%;
+    cursor: pointer;
+    font-weight: bold;
+}
 
+button.backtoaccueil:hover {
+    background-color: #A3BB07;
+    transition-duration: 0.5s;
+}
 
 
 
