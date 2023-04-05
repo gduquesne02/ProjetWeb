@@ -91,7 +91,9 @@ Le site web a été conçu en utilisant le langage HTML pour la structure de la 
 
 -Pour lancer le projet, vous devez d'abord démarrer votre serveur Apache. Si vous utilisez Xampp, vous pouvez utiliser ce logiciel pour démarrer votre serveur, sinon vous pouvez utiliser WampServer. Assurez-vous que votre serveur est bien en cours d'exécution pour gérer correctement la base de données et les scripts PHP. Pour accéder au projet, ouvrez votre navigateur et saisissez l'URL suivante dans la barre d'adresse : http://localhost/challengeweb/ProjetWeb/accueil.html. Remplacez "challengeweb" par le nom du dossier que vous avez donné à votre projet.
 
--Vous serez redirigé vers la page d'accueil de l'application. Pour vous connecter, utilisez l'adresse e-mail "test@test.fr" et le mot de passe "test".
+-Vous serez redirigé vers la page d'accueil de l'application. Pour vous connecter, utilisez l'adresse e-mail "test.test@gmail.com" et le mot de passe "test".
+
+-Il vous sera peut être nécessaire d'installer le dossier vendor, pour cela il vous suffit d'installer composer(https://getcomposer.org/download/) si jamais ce n'est pas fait et d'installer les bibliothèques HTML2PDF et Swiftmailer.
 
 # FONCTIONNALITÉS 
 
