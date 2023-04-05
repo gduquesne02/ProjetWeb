@@ -211,13 +211,24 @@ session_start();
 
             <?php
 
-            echo '
+            
+            if (true) {
+              echo '
+            <form method="post" action="quit_event.php">
+            <input type="hidden" name="id" value=' . $_GET['id'] . '></input>
+            <input type="hidden" name="idUser" value=' . $_SESSION["idUser"] . '></input>
+            <button type="submit" class="btn btn-primary" data-aos="fade-up" style="background-color: #55495a; margin-left:auto; margin-right: auto; width:100%;" >Se désinscrire de cet évenement cet événement</button>
+            </form>
+            ';
+            } else {
+              echo '
             <form method="post" action="join_event.php">
             <input type="hidden" name="id" value=' . $_GET['id'] . '></input>
             <input type="hidden" name="idUser" value=' . $_SESSION["idUser"] . '></input>
             <button type="submit" class="btn btn-primary" data-aos="fade-up" style="background-color: #55495a; margin-left:auto; margin-right: auto; width:100%;" >Participer à cet événement</button>
             </form>
             ';
+            }
             if ($_SESSION["status"] != "USER") {
               echo '<br><br><button class="btn btn-primary" onclick="openModal()" style="background-color: #55495a; margin-left:auto; margin-right: auto; width:100%;">Ouvrir la modal</button>';
             }

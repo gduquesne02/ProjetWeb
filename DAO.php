@@ -50,15 +50,13 @@ catch(PDOException $ex){
 
 	public function getFirstNameAndLastName($idUser)
 	{
-		$con = mysqli_connect('mysql-alpageweb.alwaysdata.net;dbname=alpageweb_iut', 'alpageweb', 'Z@X4w3SgSmgEhLQ', 'alpageweb_iut');
-		mysqli_select_db($con, "alpageweb_iut");
-		$sql = "select users.firstName, users.lastName from users where id=$idUser";
-		$query = mysqli_query($con, $sql);
-		$result = mysqli_fetch_assoc($query);
-		$resultstring = $result['firstName'];
-		$results = $result['lastName'];
-		mysqli_close($con);
-		return $resultstring . " " . $results;
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("SELECT * from users where id= ?");
+		$reponse->execute([$idUser]);
+		$a = $reponse->fetch();
+		$b=$a[1];
+		$c=$a[2];
+		return "$b $c";
 	}
 
 
