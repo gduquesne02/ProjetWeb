@@ -10,8 +10,8 @@ class DAO
 		return $pdo;
 	}
 
-//tester la connexion à la base de donnée
-/*try{
+	//tester la connexion à la base de donnée
+	/*try{
     $dbh = new pdo( 'mysql:host=mysql-alpageweb.alwaysdata.net;dbname=alpageweb_iut', 'alpageweb', 'Z@X4w3SgSmgEhLQ',
                     array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     die(json_encode(array('outcome' => true)));
@@ -21,7 +21,7 @@ catch(PDOException $ex){
 }*/
 
 
-	
+
 
 	public function NumberOfMembers()
 	{
@@ -47,12 +47,12 @@ catch(PDOException $ex){
 		return $resultstring;
 	}
 
-	
+
 	public function getFirstNameAndLastName($idUser)
 	{
 		$con = mysqli_connect('mysql-alpageweb.alwaysdata.net;dbname=alpageweb_iut', 'alpageweb', 'Z@X4w3SgSmgEhLQ', 'alpageweb_iut');
 		mysqli_select_db($con, "alpageweb_iut");
-		$sql = "select users.firstName, users.lastName from users where id=$id";
+		$sql = "select users.firstName, users.lastName from users where id=$idUser";
 		$query = mysqli_query($con, $sql);
 		$result = mysqli_fetch_assoc($query);
 		$resultstring = $result['firstName'];
@@ -62,11 +62,20 @@ catch(PDOException $ex){
 	}
 
 
-    public function authentificationUser($email, $password)
+	public function authentificationUser($email, $password)
 	{
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("SELECT * from users where email= ? and password = ?");
 		$reponse->execute([$email, $password]);
+		if ($ligne = $reponse->fetch()) return true;
+		else return false;
+	}
+
+	public function addUserEvent($idUser, $idEvent)
+	{
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("INSERT INTO `participants`(`idUser`, `idEvent`) VALUES (?,?)");
+		$reponse->execute([$idUser, $idEvent]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
 	}
@@ -94,17 +103,18 @@ catch(PDOException $ex){
 		else return false;
 	}
 
-	public function insertUser($email, $password, $firstName, $lastName, $iut, $status){
+	public function insertUser($email, $password, $firstName, $lastName, $iut, $status)
+	{
 
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("INSERT INTO `users`(`firstname`, `lastname`, `email`, `password`, `iut`, `status`) VALUES (?,?,?,?,?,?)");
-		$reponse->execute([$firstName, $lastName, $email, $password,$iut,$status]);
+		$reponse->execute([$firstName, $lastName, $email, $password, $iut, $status]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
-
 	}
 
-	public function getEtab(){
+	public function getEtab()
+	{
 
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("SELECT DISTINCT iut from users");
@@ -115,10 +125,9 @@ catch(PDOException $ex){
 		}
 		$reponse->closeCursor();
 		return $lst;
-
 	}
 
-    public function deleteUser($id)
+	public function deleteUser($id)
 	{
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("DELETE from users where id=?");
@@ -128,16 +137,16 @@ catch(PDOException $ex){
 	}
 
 
-	public function AddUser($nom,$prenom,$email,$iut,$status,$password)
+	public function AddUser($nom, $prenom, $email, $iut, $status, $password)
 	{
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("INSERT INTO users(lastName,firstName,email,iut,status,password) values(?,?,?,?,?,?)");
-		$reponse->execute([$nom, $prenom, $email, $iut, $status,$password]);
+		$reponse->execute([$nom, $prenom, $email, $iut, $status, $password]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
 	}
 
-    public function deleteAllUser()
+	public function deleteAllUser()
 	{
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("DELETE FROM users");
@@ -148,7 +157,7 @@ catch(PDOException $ex){
 		}
 	}
 
-    public function listEvents()
+	public function listEvents()
 	{
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("SELECT * from events ORDER BY dateEvent DESC");
@@ -161,38 +170,38 @@ catch(PDOException $ex){
 		return $lst;
 	}
 
-    public function EventById($id)
+	public function EventById($id)
 	{
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("SELECT * from events where id= ?");
 		$reponse->execute([$id]);
 		$lst = [];
 		while ($ligne = $reponse->fetch()) {
-			$lst[] = [$ligne[0], $ligne[1], $ligne[2], $ligne[3], $ligne[4], $ligne[5], $ligne[6], $ligne[7], $ligne[8], $ligne[9], $ligne[10], $ligne[11], $ligne[12], $ligne[13], $ligne[14], $ligne[15], $ligne[16] ];
+			$lst[] = [$ligne[0], $ligne[1], $ligne[2], $ligne[3], $ligne[4], $ligne[5], $ligne[6], $ligne[7], $ligne[8], $ligne[9], $ligne[10], $ligne[11], $ligne[12], $ligne[13], $ligne[14], $ligne[15], $ligne[16]];
 		}
 		$reponse->closeCursor();
 		return $lst;
 	}
 
-    public function AddEvent($name,$description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address)
+	public function AddEvent($name, $description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address)
 	{
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("INSERT INTO events(name,description,dateEvent,registrationEndDate,location,latitude,longitude,workshop,goodies,coffeeBreak,lunchBreak,numberMember,maxMember, hotel_prix, hotel_name, hotel_address) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-		$reponse->execute([$name,$description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address]);
+		$reponse->execute([$name, $description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
 	}
 
-	public function UpdateEvent($name,$description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address)
+	public function UpdateEvent($name, $description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address)
 	{
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("UPDATE events set name=?,description=?,dateEvent=?,registrationEndDate=?,location=?,latitude=?,longitude=?,workshop=?,goodies=?,coffeeBreak=?,lunchBreak=?,numberMember=?,maxMember=?, hotel_prix=?, hotel_name=?, hotel_address=? where id=?");
-		$reponse->execute([$name,$description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address]);
+		$reponse->execute([$name, $description, $dateEvent, $registrationEndDate, $location, $latitude, $longitude, $workshop, $goodies, $coffeeBreak, $lunchBreak, $numberMember, $maxMember, $hotel_prix, $hotel_name, $hotel_address]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
 	}
 
-    public function deleteEvent($id)
+	public function deleteEvent($id)
 	{
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("DELETE from events where id=?");
@@ -201,7 +210,7 @@ catch(PDOException $ex){
 		else return false;
 	}
 
-    public function addParticipant($iduser, $idEvent)
+	public function addParticipant($iduser, $idEvent)
 	{
 		$bdd = $this->connexion();
 		$reponse = $bdd->prepare("INSERT INTO participants(idUser,idEvent) values(?,?)");
@@ -209,5 +218,4 @@ catch(PDOException $ex){
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
 	}
-
 }

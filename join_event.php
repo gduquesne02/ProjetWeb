@@ -1,12 +1,14 @@
 <?php
 
 
-if (session_status() == PHP_SESSION_NONE) { session_start(); }
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 include_once "facture.php";
 include_once "DAO.php";
 
 $DAO = new DAO;
-$val =$DAO->EventById($_POST['id']);
+$val = $DAO->EventById($_POST['id']);
 
 $id  = $val[0][0];
 $name = $val[0][1];
@@ -30,7 +32,7 @@ $ligne_commande =
     array(
         array(
             "designation" => "Hotel",
-            "montantHT" => ($hotel_prix*90)/100,
+            "montantHT" => ($hotel_prix * 90) / 100,
             "montantTTC" => $hotel_prix
         ),
         array(
@@ -43,7 +45,8 @@ $lieu = [
     $name,
     $location
 ];
-$a = create_facture($_SESSION['idUser'] , $ligne_commande, $date = date('d/m/Y'), $lieu);
-header('Location:accueil.php');
+$a = create_facture($_SESSION['idUser'], $ligne_commande, $date = date('d/m/Y'), $lieu);
 
-?>
+$val = $DAO->addUserEvent($_POST['id'], $_POST["idUser"]);
+
+header('Location:accueil.php');
