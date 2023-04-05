@@ -54,7 +54,9 @@ catch(PDOException $ex){
 		$reponse = $bdd->prepare("SELECT * from users where id= ?");
 		$reponse->execute([$idUser]);
 		$a = $reponse->fetch();
-		return $a[1] . " " . $a[2];
+		$b=$a[1];
+		$c=$a[2];
+		return "$b $c";
 	}
 
 
