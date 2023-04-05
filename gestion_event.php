@@ -28,7 +28,7 @@ $dao = new DAO();
             <div class="btns-grp">
                 <div class="btns-grp" style="margin:10px">
                     <a href="accueil.php" class="btn btn-mainbtn-primary">Retour Accueil</a>
-                    <a href="#" class="btn btn-main btn-primary" onclick="AddEventBoxOn()"
+                    <a href="create_event.html" class="btn btn-main btn-primary" onclick="AddEventBoxOn()"
                         style="margin:auto">Ajouter un événement</a>
                 </div>
 
