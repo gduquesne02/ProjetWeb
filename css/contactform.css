@@ -212,12 +212,13 @@ button.backtoaccueil {
     height: 30px;
     width: 200px;
     border: none;
-    background-color: rgb(85, 226, 85);
+    background-color: #A3BB07;
     font-size: 12px;
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 10%;
     cursor: pointer;
+    font-weight: bold;
 }
 
 button.backtoaccueil:hover {
