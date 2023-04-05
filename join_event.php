@@ -48,5 +48,5 @@ $lieu = [
 $a = create_facture($_SESSION['idUser'], $ligne_commande, $date = date('d/m/Y'), $lieu);
 
 $val = $DAO->addUserEvent($_POST['id'], $_POST["idUser"]);
-
-header('Location:accueil.php');
+header('Location: accueil.php');
+exit();

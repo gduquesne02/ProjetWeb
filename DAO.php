@@ -47,6 +47,19 @@ catch(PDOException $ex){
 		return $resultstring;
 	}
 
+	public function listParticipant()
+    {
+        $bdd = $this->connexion();
+        $reponse = $bdd->prepare("SELECT * from participants");
+        $reponse->execute([]);
+        $lst = [];
+        while ($ligne = $reponse->fetch()) {
+            $lst[] = [$ligne[0], $ligne[1]];
+        }
+        $reponse->closeCursor();
+        return $lst;
+    }
+
 
 	public function getFirstNameAndLastName($idUser)
 	{

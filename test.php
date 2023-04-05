@@ -31,11 +31,11 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 include_once "facture.php";
 include_once "DAO.php";
-$id = 1;
-$idEvent = 17;
+$id = 100;
+$idEvent = 100;
 $DAO = new DAO;
 $val = $DAO->EventById($id);
 
 
 $val = $DAO->addUserEvent($id, $idEvent);
-echo $val;
+header('Location: accueil.php');

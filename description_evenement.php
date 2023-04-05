@@ -1,5 +1,6 @@
 <?php
 require('./conf.php');
+include_once "DAO.php";
 
 $req = $bdd->prepare("SELECT * FROM events WHERE id = :id");
 $req->bindParam(':id', $_GET['id']);
@@ -214,13 +215,75 @@ session_start();
             <input type="hidden" name="id" value=' . $_GET['id'] . '></input>
             <input type="hidden" name="idUser" value=' . $_SESSION["idUser"] . '></input>
             <button type="submit" class="btn btn-primary" data-aos="fade-up" style="background-color: #55495a; margin-left:auto; margin-right: auto; width:100%;" >Participer à cet événement</button>
+            </form>
             ';
+            if ($_SESSION["status"] != "USER") {
+              echo '<br><br><button class="btn btn-primary" onclick="openModal()" style="background-color: #55495a; margin-left:auto; margin-right: auto; width:100%;">Ouvrir la modal</button>';
+            }
+
             ?>
+
           </div>
+          
           <!-- End Schdule Day 1 -->
         </div>
       </div>
     </section>
+    <div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <?php
+    $list = listParticipant();
+    foreach ($list as $key) {
+      echo "<p>$key</p>";
+    }
+    ?>
+  </div>
+</div>
+<style>
+  .modal {
+  display: none; /* masque la modal par défaut */
+  position: fixed; /* positionne la modal par rapport à la fenêtre */
+  z-index: 1; /* définit l'ordre de superposition */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* permet le défilement si le contenu est trop grand */
+  background-color: rgba(0, 0, 0, 0.4); /* ajoute un fond semi-transparent */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* centre la modal verticalement et horizontalement */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+</script>
     <!-- End Schedule Section -->
   </main>
   <!-- End #main -->
