@@ -80,7 +80,7 @@ $dao = new DAO();
                 <a href="#" class="btn btn-primary" onclick="EditEventBoxOn(' . $event[0] . ')">
                     <i class="fa-solid fa-pen-to-square"></i>
                 </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="button" class="btn btn-primary" onclick="window.location.href=\'controllers/DeleteUser.php?id=' . $event[0] . '\'">
+                <button type="button" class="btn btn-primary" onclick="window.location.href=\'controllers/DeleteEvent.php?id=' . $event[0] . '\'">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </td>
