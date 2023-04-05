@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
@@ -12,8 +14,12 @@
     <!-- Template Main CSS File -->
     <link href="./css/contactform.css" rel="stylesheet" />
     <link href="./css/styleformcreateevent.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
 
+   
 
     <!-- =======================================================
   * Template Name: TheEvent
@@ -22,14 +28,10 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
+  </head>
 
 <body>
-
     <div class="container">
-        <a class="backtoaccueil" href="./accueil.php">
-            <button class="backtoaccueil">Retourner à l'accueil</button>
-          </a> 
         <div class="card">
             <div class="top-div">
                 <h2>Formulaire de contact</h2>
@@ -72,37 +74,52 @@
                     </div>
                 </div>
 
-                <div class="button">
-                    <button onclick=sendMessage()>Envoyer</button>
-                </div>
-            </form>
-
-
-        </div>
+          <div class="button" onclick="sendMail()">
+            <button>Envoyer</button>
+          </div>
+          <h2 class="message-envoye"></h2>
+        </form>
+      </div>
     </div>
     <footer>
-        <script>
-            function sendMessage() {
-                var email = document.getElementById("email");
-                var tel = document.getElementById("tel");
-                var message = document.getElementById("zonetext");
+      <script>
+        function sendMail() {
+          var email = document.getElementById("email").value;
+          var message = document.getElementById("zonetext").value;
 
-                email.value = "";
-                tel.value = "";
-                message.value = "";
-                alert("Email bien envoyé !");
-            }
-        </script>
-        <!-- Vendor JS Files -->
-        <script src="assets/vendor/aos/aos.js"></script>
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="assets/vendor/php-email-form/validate.js"></script>
+          if(email!="" && message!=""){
 
-        <!-- Template Main JS File -->
-        <script src="assets/js/form.js"></script>
+          $.ajax({
+            url: "traitement.php",
+            type: "POST",
+            data: {
+              email: email,
+              message: message,
+            },
+            cache: false,
+            headers: { "Cache-Control": "no-cache" },
+            success: function (response) {
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+            },
+            complete: function () {
+            },
+          });
+
+          const h2Element = document.querySelector(".message-envoye");
+          h2Element.innerText = h2Element.innerText;
+        }
+        }
+      </script>
+      <!-- Vendor JS Files -->
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+
+      <!-- Template Main JS File -->
+      <script src="assets/js/form.js"></script>
     </footer>
-</body>
-
+  </body>
 </html>

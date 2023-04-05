@@ -1,25 +1,33 @@
 <?php
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
+// Chargez la bibliothèque SwiftMailer
+require_once './vendor/autoload.php';
+
+
+session_start();
+
+
+// Créez un objet de transport SMTP
+$transport = (new Swift_SmtpTransport('smtp.ionos.fr', 465, 'ssl')) //Ici (adresse SMTP, le Port utilisé, la sécurité ssl)
+    ->setUsername('contact@antoine-lamesch.fr') //votre identifiant SMTP, souvent le mail par lequel vous voulez envoyer le message
+    ->setPassword('Baptiste14Adrien29.@'); //Votre mot de passe SMTP
+
+// Créez l'objet Mailer avec le transport SMTP
+$mailer = new Swift_Mailer($transport);
+
+// Créez l'objet Message avec les détails du mail
+$message = (new Swift_Message('Sujet du mail'))
+    ->setFrom(['contact@antoine-lamesch.fr' => 'Antoine Lamesch'])
+    ->setTo(['antoine.lamesch@live.fr' => 'Utilisateur'])
+    ->setBody('Votre code de validation est : 123');
+
+// Envoyez le message
+$result = $mailer->send($message);
+ob_start();
+
+// Vérifiez si le mail a été envoyé avec succès
+if ($result) {
+    return 'Le mail a été envoyé avec succès';
+} else {
+    return 'Une erreur est survenue lors de l\'envoi du mail';
 }
-include_once "facture.php";
-$ligne_commande =
-    array(
-        array(
-            "designation" => "Hotel",
-            "montantHT" => "58,33",
-            "montantTTC" => "70"
-        ),
-        array(
-            "designation" => "Repas",
-            "montantHT" => "28,33",
-            "montantTTC" => "34"
-        )
-    );
-$lieu = [
-    "5 rue des fleurs",
-    "59800 Lille"
-];
-$a = create_facture($_SESSION['idUser'], $ligne_commande, "12/12/1999", $lieu);
-echo $_SESSION['idUser'];

@@ -190,16 +190,16 @@ $dao = new DAO();
                                   <input type="text" name="name" placeholder="Nom de l\'événement" value="' . $event[1] . '" required>
                                 </div> 
                                 <div class="col-lg-12">
-                                    <input type="text" name="nom" placeholder="Nom" value="' . $event[2] . '" required>
+                                    <input type="text" name="description" placeholder="Description" value="' . $event[2] . '" required>
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="email" placeholder="email" value="' . $event[3] . '">
+                                  <input type="date" name="dateEvent" placeholder="Date événement" value="' . $event[3] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[4] . '">
+                                  <input type="date" name="registrationEndDate" placeholder="Date fin d\'inscription" value="' . $event[4] . '">
                                 </div>
                                 <div class="col-lg-12">
-                                  <input type="text" name="iut" placeholder="numéro" value="' . $event[5] . '">
+                                  <input type="text" name="location" placeholder="Localisation" value="' . $event[5] . '">
                                 </div>
                                 <div class="col-lg-12">
                                   <input type="text" name="iut" placeholder="numéro" value="' . $event[6] . '">
