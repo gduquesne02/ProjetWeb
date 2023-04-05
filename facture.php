@@ -1,5 +1,4 @@
 <?php
-
 use Spipu\Html2Pdf\HTML2PDF;
 
 function test()

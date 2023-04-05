@@ -84,6 +84,31 @@ catch(PDOException $ex){
 		return $lst;
 	}
 
+
+	public function insertUser($email, $password, $firstName, $lastName, $iut, $status){
+
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("INSERT INTO `users`(`firstname`, `lastname`, `email`, `password`, `iut`, `status`) VALUES (?,?,?,?,?,?)");
+		$reponse->execute([$firstName, $lastName, $email, $password,$iut,$status]);
+		if ($ligne = $reponse->fetch()) return true;
+		else return false;
+
+	}
+
+	public function getEtab(){
+
+		$bdd = $this->connexion();
+		$reponse = $bdd->prepare("SELECT DISTINCT iut from users");
+		$reponse->execute([]);
+		$lst = [];
+		while ($ligne = $reponse->fetch()) {
+			$lst[] = [$ligne[0]];
+		}
+		$reponse->closeCursor();
+		return $lst;
+
+	}
+
     public function deleteUser($id)
 	{
 		$bdd = $this->connexion();

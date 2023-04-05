@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2b8d0cb9a84111ebc412149ed4cb59b",
+    "content-hash": "adc3c21f0c2f3a68b1c345a61a27b0d5",
     "packages": [
         {
             "name": "spipu/html2pdf",
