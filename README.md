@@ -27,12 +27,19 @@ Participants :
 Récapitulatif des travaux faits par chacun : 
 
 -[Oussama et El Mehdi] = gestion des utilisateurs.
+
 -[Clément et Alexandre] = wireframe maquette, page de connexion, le footer, l'affichage de la liste des événements et la page de détail d'un événement. l'affichage des différents boutons en fonction du rôle de l'utilisateur en plus.
+
 -[Philippe] = moodboard, réunion avec Mme Fernandez, « cahier des charges », DAO(connexion à la bdd et fonction crud), formulaire création événement, formulaire de contact, création de la base de donnée, hébergement de la base de donnée, création du diagramme de class, gestion des événements.
+
 -[Antoine] : réunion avec Mme Fernandez, cahier des charges, questionnaire Google forum cahier des charges, relier le front au back sur la page événement, la barre de navigation, formulaire création événement, formulaire contact, participer à un événement, liaison avec le devis.
+
 -[Thibault] : génération du devis en pdf, ajout d'un user dans un événement.
+
 -[Jordan] : le formulaire de contact.
+
 -[Guillaume] : le design, le style css, Fichier ReadMe, Gestion du Discord, Création du Repo sur Github.
+
 -[Medi] : Fichier ReadMe, le design style css.
 
 
