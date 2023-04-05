@@ -186,7 +186,7 @@ catch(PDOException $ex){
     public function deleteEvent($id)
 	{
 		$bdd = $this->connexion();
-		$reponse = $bdd->prepare("DELETE from event where id=?");
+		$reponse = $bdd->prepare("DELETE from events where id=?");
 		$reponse->execute([$id]);
 		if ($ligne = $reponse->fetch()) return true;
 		else return false;
