@@ -40,7 +40,7 @@ Récapitulatif des travaux faits par chacun :
 
 - Guillaume : le design, le style css, Fichier ReadMe, Gestion du Discord, Création du Repo sur Github.
 
-- Medi : Fichier ReadMe, le design style css.
+- Medi : Fichier ReadMe, le design style css, modale mot de passe oublié, aide déconnexion
 
 
 Alpage Web
