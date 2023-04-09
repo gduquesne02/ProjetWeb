@@ -9,16 +9,16 @@ $message = isset($_POST['message']) ? $_POST['message'] : '';
 
 // Création d'un objet de transport SMTP avec les informations du serveur SMTP
 $transport = (new Swift_SmtpTransport('smtp.ionos.fr', 587, 'tls'))
-    ->setUsername('contact@antoine-lamesch.fr')
-    ->setPassword('Baptiste14Adrien29.@');
+    ->setUsername('')
+    ->setPassword('');
 
 // Création de l'objet Mailer avec le transport SMTP
 $mailer = new Swift_Mailer($transport);
 
 // Création de l'objet Message avec les informations du mail à envoyer
 $message = (new Swift_Message('Nouveau message'))
-    ->setFrom(['contact@antoine-lamesch.fr' => 'Admnistrateur'])
-    ->setTo(['antoine.lamesch@live.fr'])
+    ->setFrom(['' => 'Admnistrateur'])
+    ->setTo([''])
     ->setBody("Email: $email\nMessage: $message");
 
 // Envoi du mail avec SwiftMailer
